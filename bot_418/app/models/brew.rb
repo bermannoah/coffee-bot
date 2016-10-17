@@ -23,4 +23,16 @@ class Brew < ApplicationRecord
     }
   end
   
+  def get_last_brewed
+    time = created_at.strftime("%I:%M:%S %p")
+    {
+      "text": "#{user_name} brewed coffee in #{location} at #{time}.",
+      "attachments": [
+        {
+          "text":"#{description}"
+              }
+            ]
+    }
+  end
+  
 end

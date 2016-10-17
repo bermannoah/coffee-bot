@@ -5,4 +5,8 @@ class Api::V1::CoffeeController < Api::V1::BaseController
     render json: brew.get_response
   end
   
+  def show
+    render json: Brew.last.get_last_brewed
+  end
+  
 end
