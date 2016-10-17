@@ -1,8 +1,14 @@
 # 418 Bot
 
-I'm a coffee-pot slack-bot.
+## I'm a coffee-pot slack-bot. 
 
-TODO: 
+### Technical details
+
+Rails API endpoints that interact with Slack slash commands and store data using PostgreSQL. 
+
+![Picture of interaction](https://github.com/bermannoah/418-bot/blob/master/coffee_pot_screen_shot.jpg)
+
+### TODO: 
  - interactive button response
  - other interactive options (e.g. excuses - "No time to brew coffee but we're out!")  
  - way to visualize coffee brewing data
