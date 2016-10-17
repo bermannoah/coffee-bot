@@ -11,12 +11,13 @@ class Brew < ApplicationRecord
   end
   
   def get_response
+    time = created_at.strftime("%I:%M:%S %p")
     {
       "response_type": "in_channel",
-      "text": "#{self.user_name} has started brewing coffee in #{self.location} at #{self.created_at}.",
+      "text": "#{user_name} has started brewing coffee in #{location} at #{time}.",
       "attachments": [
         {
-          "text":"#{self.description}"
+          "text":"#{description}"
               }
             ]
     }
