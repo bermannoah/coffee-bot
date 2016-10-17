@@ -1,5 +1,6 @@
 class Brew < ApplicationRecord
 
+
   def self.create_new_brew(params)
     text = params["text"].split(' ')
     location = text.shift || "Blake"
@@ -25,12 +26,12 @@ class Brew < ApplicationRecord
 
   def get_last_brewed(limit)
     list = ''
-    Brew.limit(limit).each do |brew|
+    Brew.order(created_at: :desc).limit(limit).each do |brew|
       time = brew.created_at.strftime("%I:%M:%S %p")
       list << "#{brew.user_name} brewed coffee in #{brew.location} at #{time}. | #{brew.description}\n"
     end
     {
-      "text": "Last coffee brews:",
+      "text": "Last coffee brew(s):",
       "attachments": [
         {
           "text": list
