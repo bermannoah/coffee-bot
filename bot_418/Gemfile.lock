@@ -44,6 +44,8 @@ GEM
     concurrent-ruby (1.0.2)
     erubis (2.7.0)
     ffi (1.9.14)
+    figaro (1.1.1)
+      thor (~> 0.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -129,6 +131,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  figaro
   listen (~> 3.0.5)
   pg
   pry-rails
