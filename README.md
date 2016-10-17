@@ -1,24 +1,9 @@
-# README
+# 418 Bot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I'm a coffee-pot slack-bot.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TODO: 
+ - interactive button response
+ - other interactive options (e.g. excuses - "No time to brew coffee but we're out!")  
+ - way to visualize coffee brewing data
+ - make coffee bot actually be able to make coffee!
