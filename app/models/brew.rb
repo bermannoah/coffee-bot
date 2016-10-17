@@ -1,5 +1,6 @@
 class Brew < ApplicationRecord
-  
+
+
   def self.create_new_brew(params)
     text = params["text"].split(' ')
     location = text.shift || "Blake"
@@ -9,7 +10,7 @@ class Brew < ApplicationRecord
         description: text.join(' ')
     )
   end
-  
+
   def get_response
     time = created_at.strftime("%I:%M:%S %p")
     {
@@ -22,17 +23,25 @@ class Brew < ApplicationRecord
             ]
     }
   end
-  
-  def get_last_brewed
-    time = created_at.strftime("%I:%M:%S %p")
+
+  def get_last_brewed(limit)
+    list = ''
+    Brew.order(created_at: :desc).limit(limit).each do |brew|
+      time = brew.created_at.strftime("%I:%M:%S %p")
+      list << "#{brew.user_name} brewed coffee in #{brew.location} at #{time}. | #{brew.description}\n"
+    end
     {
-      "text": "#{user_name} brewed coffee in #{location} at #{time}.",
+      "text": "Last coffee brew(s):",
       "attachments": [
         {
-          "text":"#{description}"
-              }
-            ]
+          "text": list
+        }
+      ]
     }
   end
-  
+
+  def self.get_limit(input)
+    input.to_i != 0 ? input.to_i : 1
+  end
+
 end
