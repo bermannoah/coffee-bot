@@ -14,7 +14,7 @@ class Brew < ApplicationRecord
   def get_response
     time = created_at.strftime("%I:%M:%S %p")
     {
-      "text": "Hey #{user_name} thanks for brewing coffee! You're a hero!"
+      "text": "Hey #{user_name} thanks for brewing coffee! You're a hero!",
       "attachments": [
         {
           "text":"#{description}"
