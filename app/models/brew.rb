@@ -23,7 +23,7 @@ class Brew < ApplicationRecord
     }
   end
 
-  def get_last_brewed(limit)
+  def self.get_last_brewed(limit)
     list = ''
     Brew.order(created_at: :desc).limit(limit).each do |brew|
       time = brew.created_at.strftime("%I:%M:%S %p")
