@@ -10,4 +10,9 @@ class Api::V1::CoffeeController < Api::V1::BaseController
     render json: Brew.get_last_brewed(limit)
   end
 
+  def index
+    @brews = Brew.all
+  end
+    
+  
 end

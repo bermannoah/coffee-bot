@@ -1,0 +1,9 @@
+<h1>ALL THE BREWS!!!!!!!!</h1>
+
+<ul>
+<% @brews.each do |brew| %>
+  <li><%= brew.user_name %></li>
+  <li><%= brew.location %></li>
+  <li><%= brew.created_at %></li>
+<% end %>
+</ul>

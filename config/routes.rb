@@ -6,5 +6,12 @@ Rails.application.routes.draw do
       get '/coffee_brewing', to: 'coffee#show'
     end
   end
+  
+  namespace :api do
+    namespace :v1 do
+      get "/", to: "coffee#index"
+    end
+  end
+  
 
 end
