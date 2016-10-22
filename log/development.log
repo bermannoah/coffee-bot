@@ -1498,3 +1498,63 @@ Processing by Api::V1::CoffeeController#index as HTML
 Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:19:28 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (7.3ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:19:29 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (7.2ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:19:29 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.7ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:19:29 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.7ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:20:12 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.2ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/coffee_brewing" for ::1 at 2016-10-21 19:20:15 -0600
+Processing by Api::V1::CoffeeController#show as JSON
+  [1m[36mBrew Load (0.5ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/coffee_brewing" for ::1 at 2016-10-21 19:20:17 -0600
+Processing by Api::V1::CoffeeController#show as JSON
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT  "brews".* FROM "brews" ORDER BY "brews"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:20:18 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.8ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
