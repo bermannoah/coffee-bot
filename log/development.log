@@ -1350,3 +1350,151 @@ Processing by Api::V1::CoffeeController#index as HTML
 Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:02 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.6ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (15.6ms)
+Completed 200 OK in 27ms (Views: 18.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:03 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.9ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:03 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (8.3ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:04 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (7.5ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:04 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.9ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:04 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (22.6ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:04 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.4ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:04 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (7.3ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:04 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.2ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:04 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.4ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:19 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.2ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:15:30 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (6.6ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:16:18 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.5ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (17.2ms)
+Completed 200 OK in 27ms (Views: 20.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:16:24 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (7.3ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:16:25 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.3ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (7.4ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:16:43 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.5ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (16.6ms)
+Completed 200 OK in 27ms (Views: 21.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:16:55 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.7ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (18.1ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/v1/" for ::1 at 2016-10-21 19:16:56 -0600
+Processing by Api::V1::CoffeeController#index as HTML
+  Rendering api/v1/coffee/index.html.erb
+  [1m[36mBrew Load (0.4ms)[0m  [1m[34mSELECT "brews".* FROM "brews"[0m
+  Rendered api/v1/coffee/index.html.erb (7.8ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
