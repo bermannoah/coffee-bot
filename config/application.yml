@@ -1,5 +1,0 @@
-RDS_DB_NAME: bot418 
-RDS_USERNAME: coffeebotdb
-RDS_PASSWORD:  aLJMGfoyd3u6VA7N6CE7fW3cmeYtH
-RDS_HOSTNAME:  coffeepot.cuieseybkj9m.us-west-2.rds.amazonaws.com
-RDS_PORT: 5432
