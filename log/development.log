@@ -3417,3 +3417,12 @@ Started GET "/assets/application-3f62132e47c96a869b4bc6bcccd9ecc93ed30cefaa6b005
 Started GET "/assets/skeleton-f6d82429c7efe05c919459f4a75078326d7d9a9c6c0c5b4e1d595ae17cb9d7fc.css" for ::1 at 2016-10-21 21:22:21 -0600
 Started GET "/assets/normalize-333ce827f60870acbaa5a751d49889465ce84697ee03980558f7d38405f670da.css" for ::1 at 2016-10-21 21:22:21 -0600
 Started GET "/assets/application-40280b360402a91bb80ec1e9f949c5212e2f0f9124d678a6e923e1a632acdb94.js" for ::1 at 2016-10-21 21:22:21 -0600
+Started GET "/" for ::1 at 2016-10-21 21:24:26 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CoffeeController#index as HTML
+  Rendering coffee/index.html.erb within layouts/application
+  [1m[36mBrew Load (0.9ms)[0m  [1m[34mSELECT "brews".* FROM "brews" ORDER BY "brews"."created_at" DESC[0m
+  Rendered coffee/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 218ms (Views: 212.3ms | ActiveRecord: 3.2ms)
+
+

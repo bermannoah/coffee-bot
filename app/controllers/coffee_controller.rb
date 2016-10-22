@@ -4,5 +4,4 @@ class CoffeeController < ApplicationController
     @brews = Brew.order(created_at: :desc)
   end
   
-  
 end

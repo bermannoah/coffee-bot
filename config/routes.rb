@@ -7,12 +7,6 @@ Rails.application.routes.draw do
     end
   end
   
-  # namespace :api do
-  #   namespace :v1 do
-  #     root to: "coffee#index"
-  #   end
-  # end
-  # 
   root to: "coffee#index"
   
 end
