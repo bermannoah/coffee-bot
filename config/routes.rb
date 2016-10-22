@@ -6,5 +6,7 @@ Rails.application.routes.draw do
       get '/coffee_brewing', to: 'coffee#show'
     end
   end
-
+  
+  root to: "coffee#index"
+  
 end

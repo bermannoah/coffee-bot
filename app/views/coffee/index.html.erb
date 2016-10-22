@@ -1,0 +1,22 @@
+<h1 class="header">ALL THE BREWS</h1>
+
+<div class="list_of_brews">
+  <table>
+    <thead>
+      <tr>
+        <th>Brewed By</th>
+        <th>Location</th>
+        <th>Time Brewed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @brews.each do |brew| %>
+      <tr>
+        <td>☕️ &nbsp;<%= brew.user_name %></td>
+        <td><%= brew.location %></td>
+        <td><%= brew.created_at.strftime("%b %e, %l:%M %p") %></td>
+      </tr>
+      <% end %>
+  </tbody>
+  </table>
+</div>
