@@ -5,10 +5,8 @@ class Brew < ApplicationRecord
       Brew.how_to_brew(params)
     elsif params["text"] == "#out"
       Brew.we_are_out_of_coffee(params)
-    elsif params["text"] == "#anon"
-      brew = Brew.create_new_anonymous_brew(params)
     else
-      brew = Brew.create_new_brew(params)
+      Brew.create_new_brew(params)
     end
   end
 
@@ -20,26 +18,16 @@ class Brew < ApplicationRecord
         location: location,
         description: text.join(' ')
     )
-    Brew.brewed_coffee_response(params, brew)
+    brew.brewed_coffee_response(params)
   end
   
-  def self.create_new_anonymous_brew(params)
-    text = params["text"].split(' ')
-    location = text[1] || "a secret location"
-    brew = Brew.create!(
-        user_name: "Someone at Turing",
-        location: location
-    )
-    Brew.brewed_coffee_response(params, brew)
-  end
-
-  def self.brewed_coffee_response(params, brew)
-    time = brew.created_at.strftime("%I:%M:%S %p")
+  def brewed_coffee_response(params)
+    time = created_at.strftime("%I:%M:%S %p")
     {
-      "text": "Hey #{brew.user_name} thanks for brewing coffee! You're a hero!",
+      "text": "Hey #{user_name} thanks for brewing coffee! You're a hero!",
       "attachments": [
         {
-          "text":"#{brew.description}"
+          "text":"#{description}"
               }
             ]
     }
@@ -49,11 +37,7 @@ class Brew < ApplicationRecord
     list = ''
     Brew.order(created_at: :desc).limit(limit).each do |brew|
       time = brew.created_at.strftime("%I:%M:%S %p")
-      if brew.description.nil?
-        list << "#{brew.user_name} brewed coffee in #{brew.location} at #{time}.\n"
-      else
-        list << "#{brew.user_name} brewed coffee in #{brew.location} at #{time}. | #{brew.description}\n"
-      end
+      list << "Coffee was brewed in #{brew.location} at #{time}. | #{brew.description}\n"
     end
     {
       "text": "Last coffee brew(s):",
