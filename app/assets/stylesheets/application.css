@@ -10,15 +10,15 @@
 .table_element {
   margin: 100px;
 }
-
-th {
-  padding-left: 100px;
-}
-
-td {
-  padding-left: 100px;
-}
-
+``
 table {
   width: 500px;
+}
+
+.main-page-table {
+  border: 1px solid black;
+}
+
+.how-to-page-link {
+  text-decoration: none;
 }

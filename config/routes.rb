@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   
   root to: "coffee#index"
   
+  get '/list_of_brews', to: 'coffee#show'
+  get '/how_to_brew', to: 'coffee#how'
+  get '/coffee_info', to: 'coffee#info'
+
 end
