@@ -7,12 +7,12 @@
   justify-content: center;
 }
 
+.brews-table {
+  border: 1px solid black;
+}
+
 .table_element {
   margin: 100px;
-}
-``
-table {
-  width: 500px;
 }
 
 .main-page-table {
