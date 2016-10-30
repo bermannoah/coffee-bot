@@ -10,8 +10,5 @@ Rails API endpoints that interact with Slack slash commands and store data using
 
 ### TODO: 
  - interactive button response
- - other interactive options (e.g. excuses - "No time to brew coffee but we're out!")  
- - user suggestion - "/how_to_brew" returns directions!
- - user suggestion - anonymous brew submission
  - way to visualize coffee brewing data
  - make coffee bot actually be able to make coffee!
