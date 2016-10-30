@@ -22,3 +22,7 @@ table {
 .how-to-page-link {
   text-decoration: none;
 }
+
+.command-column {
+  width: 18rem;
+}
