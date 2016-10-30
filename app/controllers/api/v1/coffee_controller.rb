@@ -1,9 +1,7 @@
 class Api::V1::CoffeeController < Api::V1::BaseController
 
   def create
-    brew = Brew.create_new_brew(params)
-    CLIENT.update("Coffee is brewing at #{brew.location}.")
-    render json: brew.get_response
+    render json: Brew.handle_request(params)
   end
 
   def show
