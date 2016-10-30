@@ -4,4 +4,4 @@ tmp
 
 log
 
-/config/application.yml
+./config/secrets.yml
