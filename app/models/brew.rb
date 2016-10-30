@@ -27,7 +27,7 @@ class Brew < ApplicationRecord
       "text": "Hey #{user_name} thanks for brewing coffee! You're a hero!",
       "attachments": [
         {
-          "text":"#{description}"
+          "text": "#{description}"
               }
             ]
     }
