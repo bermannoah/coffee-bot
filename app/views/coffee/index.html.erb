@@ -1,9 +1,9 @@
 <div class="text-center">
 <h2>Welcome to ☕️ 418-Bot!</h2>
 
-<p>
+<h5>
   Coffee was most recently brewed in: <%= @most_recent_brew.location %> at <%= @most_recent_brew.created_at.strftime("%l:%M %p on %b %e") %>.
-</p>
+</h5>
 
 <p>
   List of 418-Bot commands:
@@ -24,7 +24,7 @@
         <tr>
             <td class="command-column">/coffee_brewing #how</td>
             <td>returns a quick guide to brewing a great pot of coffee</td>
-            <td>You can also click <%= link_to "here", how_to_brew_path %> for location specific info.</td>
+            <td>You can also click <a href="/how_to_brew" class="link-decoration">here</a> for location specific info.</td>
         </tr>
         <tr>
             <td class="command-column">/coffee_brewing #out</td>
@@ -42,4 +42,7 @@
 <p>
   @noah on slack with questions! hope you enjoy :)
 </p>
+
+<a href="https://twitter.com/turingcoffeebot" class="link-decoration" data-show-count="false">follow @turingcoffeebot</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </div>
