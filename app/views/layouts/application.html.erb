@@ -5,12 +5,26 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= stylesheet_link_tag    'skeleton', media: 'all' %>
+    <%= stylesheet_link_tag    'spectre.min', media: 'all' %>
     <%= stylesheet_link_tag    'normalize', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <ul class="tab tab-block">
+      <li class="tab-item">
+          <a href="/">418 Bot</a>
+      </li>
+      <li class="tab-item">
+          <a href="/list_of_brews">List of Brews</a>
+      </li>
+      <li class="tab-item">
+          <a href="/how_to_brew">Brewing Instructions</a>
+      </li>
+      <li class="tab-item">
+          <a href="/coffee_info">Coffee Information</a>
+      </li>
+    </ul>
     <%= yield %>
   </body>
 </html>

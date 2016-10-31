@@ -7,18 +7,22 @@
   justify-content: center;
 }
 
+.brews-table {
+  border: 1px solid black;
+}
+
 .table_element {
   margin: 100px;
 }
 
-th {
-  padding-left: 100px;
+.main-page-table {
+  border: 1px solid black;
 }
 
-td {
-  padding-left: 100px;
+.link-decoration {
+  text-decoration: none;
 }
 
-table {
-  width: 500px;
+.command-column {
+  width: 18rem;
 }
