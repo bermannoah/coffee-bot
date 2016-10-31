@@ -55,7 +55,9 @@ class Brew < ApplicationRecord
       "attachments": [
         {
           "text": 
-                 "Here's how to brew coffee:\n
+                 "These instructions work for Blake. To see info for all\n
+                  Turing locations, visit https://turingcoffee.herokuapp.com/how_to_brew\n
+                  Here's how to brew coffee:\n
                   1. Make sure coffee pot and grounds basket are empty and rinsed out.\n
                   2. Set grinder to medium (or one notch below).\n
                   3. Grind beans and fill filter until it is just over half full.\n
