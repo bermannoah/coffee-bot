@@ -4,9 +4,14 @@
 
 ### Technical details
 
-Rails API endpoints that interact with Slack slash commands and store data using PostgreSQL. 
+Rails endpoints that interact with Slack slash commands and store data using PostgreSQL.
+View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework and the connection to twitter is handled via the [twitter gem](https://github.com/sferik/twitter).
 
-![Picture of interaction](https://github.com/bermannoah/418-bot/blob/master/coffee_pot_screen_shot.jpg)
+### Basics of interacting with the bot
+![gif of interaction](https://github.com/bermannoah/418-bot/blob/master/basics.gif)
+
+### A view page
+![view of this iteration of the site](https://github.com/bermannoah/418-bot/blob/master/main_view.jpg)
 
 ### TODO: 
  - interactive button response
