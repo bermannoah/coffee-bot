@@ -18,6 +18,7 @@ class Brew < ApplicationRecord
         location: location,
         description: text.join(' ')
     )
+    CLIENT.update("Coffee is brewing at #{brew.location}.")
     brew.brewed_coffee_response(params)
   end
   
