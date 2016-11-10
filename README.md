@@ -7,7 +7,7 @@
 Rails endpoints that interact with Slack slash commands and store data using PostgreSQL.
 View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework and the connection to twitter is handled via the [twitter gem](https://github.com/sferik/twitter).
 
-[![Code Climate](https://codeclimate.com/github/bermannoah/418-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/418-bot) [![Test Coverage](https://codeclimate.com/github/bermannoah/418-bot/badges/coverage.svg)](https://codeclimate.com/github/bermannoah/418-bot/coverage) <a href="https://codeclimate.com/github/bermannoah/418-bot"><img src="https://codeclimate.com/github/bermannoah/418-bot/badges/issue_count.svg" /></a>
+[![Code Climate](https://codeclimate.com/github/bermannoah/418-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/418-bot)
 
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/418-bot/blob/master/basics.gif)
