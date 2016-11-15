@@ -8,6 +8,7 @@ gem 'pg'
 gem 'responders'
 gem 'figaro'
 gem 'twitter'
+gem 'rb-readline'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'bundler'
