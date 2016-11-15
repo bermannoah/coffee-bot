@@ -2,7 +2,9 @@
 <h2>Welcome to ☕️ 418-Bot!</h2>
 
 <h5>
+  <% if @most_recent_brew %>
   Most recent coffee brew: <%= @most_recent_brew.location %> at <%= @most_recent_brew.created_at.strftime("%l:%M %p on %b %e") %>.
+  <% end %>
 </h5>
 
 <p>
