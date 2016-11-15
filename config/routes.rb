@@ -7,7 +7,9 @@ end
 
 Rails.application.routes.draw do
 
-  resources :users
+  namespace :admin do
+    resources :users
+  end
   
   namespace :api, defaults: { format: :json } do
     namespace :v1 do 
