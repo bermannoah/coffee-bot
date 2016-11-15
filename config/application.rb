@@ -28,7 +28,5 @@ module Bot418
     # Skip views, helpers and assets when generating a new resource.
     config.time_zone = 'Mountain Time (US & Canada)'
     config.active_record.default_timezone = :local
-    config.middleware.use 'Apartment::Elevators::Subdomain'
-
   end
 end
