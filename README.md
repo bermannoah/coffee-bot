@@ -13,7 +13,7 @@ View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framewo
 ![gif of interaction](https://github.com/bermannoah/418-bot/blob/master/basics.gif)
 
 ### A view page
-![view of this iteration of the site](https://github.com/bermannoah/418-bot/blob/master/main_view.jpg)
+![view of this iteration of the site](https://github.com/bermannoah/418-bot/blob/master/coffee_pot_screen_shot.jpg)
 
 ### TODO: 
  - interactive button response
