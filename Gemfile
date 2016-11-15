@@ -10,6 +10,7 @@ gem 'responders'
 gem 'figaro'
 gem 'twitter'
 gem "brakeman", :require => false
+gem 'omniauth-slack'
 gem 'rb-readline'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
