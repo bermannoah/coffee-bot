@@ -13,6 +13,7 @@ gem "brakeman", :require => false
 gem 'omniauth-slack'
 gem 'rb-readline'
 gem 'faraday'
+gem 'omniauth-slack'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'bundler'
