@@ -5,13 +5,13 @@ module SlackService
     User.create_from_slack(user_info)
   end
 
-  def self.sign_in_uri
-    "https://slack.com/oauth/authorize?" +
-      "scope=identity.basic,identity.team&" +
-      "client_id=#{ENV['slack_client_id']}&" +
-      "redirect_uri=#{redirect_uri}"
-  end
-
+  # def self.sign_in_uri
+  #   "https://slack.com/oauth/authorize?" +
+  #     "scope=identity.basic,identity.team&" +
+  #     "client_id=#{ENV['slack_client_id']}&" +
+  #     "redirect_uri=#{redirect_uri}"
+  # end
+  # 
   private
   
     def self.redirect_uri
@@ -21,7 +21,7 @@ module SlackService
         "https%3A%2F%turingcoffee.herokuapp.com%2Fauth%2Fslack%2Fcallback"
       end
     end
-
+  
     def self.conn
       Faraday.new(:url => "https://slack.com") do |faraday|
         faraday.request  :url_encoded
@@ -29,7 +29,7 @@ module SlackService
         faraday.basic_auth(ENV['slack_client_id'], ENV['API_SECRET'])
       end
     end
-
+  
     def self.fetch_info_via_code(code)
       response = conn.get do |req|
         req.url "/api/oauth.access?redirect_uri=#{redirect_uri}"
