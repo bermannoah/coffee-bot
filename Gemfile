@@ -10,6 +10,7 @@ gem 'figaro'
 gem 'twitter'
 gem 'omniauth-slack'
 gem 'rb-readline'
+gem 'faraday'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'bundler'
