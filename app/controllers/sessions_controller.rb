@@ -1,4 +1,13 @@
 class SessionsController < ApplicationController
+  
+  def show
+    if current_user
+      redirect_to companies_path
+    else
+      render layout: false
+    end
+  end
+  
   def new
    redirect_to SlackService.sign_in_uri
   end
