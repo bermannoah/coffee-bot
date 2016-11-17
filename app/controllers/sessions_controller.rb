@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
    redirect_to SlackService.sign_in_uri
- end
+  end
 
  def create
    if user = SlackService.authenticate(params)

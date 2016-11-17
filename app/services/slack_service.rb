@@ -16,7 +16,7 @@ module SlackService
   
     def self.redirect_uri
       if ENV["RAILS_ENV"].in?(["test", "development"])
-        "https://localhost:3000/slack/auth"
+        "http%3A%2F%2F0.0.0.0%3A3000%2Fauth%2Fslack%2Fcallback"
       else
         "https%3A%2F%turingcoffee.herokuapp.com%2Fauth%2Fslack%2Fcallback"
       end
