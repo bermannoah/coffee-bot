@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   end
   
   root to: "coffee#index"
+  get  '/auth/slack/callback', to: 'sessions#create'
+  post '/logout',              to: 'sessions#destroy'
+  get  '/sign_in_with_slack',  to: 'sessions#new'
   
   constraints SubdomainConstraint do
     get '/list_of_brews', to: 'coffee#show'
