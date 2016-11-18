@@ -1,58 +1,61 @@
 <div class="text-center">
+
 <h2>Welcome to ☕️ 418-Bot!</h2>
 
-<% if current_user.nil? %>
-  <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.team&client_id=2329094327.104681505318"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
-<% end %>
-
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
-
-<h5>
-  <% if @most_recent_brew && current_user %>
-    Most recent coffee brew: <%= @most_recent_brew.location %> at <%= @most_recent_brew.created_at.strftime("%l:%M %p on %b %e") %>.
+  <% if current_user.nil? %>
+    <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.team&client_id=2329094327.104681505318"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
+  <% else %>
+    <%= link_to "Logout", logout_path, method: :destroy %>
   <% end %>
-</h5>
 
-<p>
-  List of 418-Bot commands:
-  <table class="col-7 centered table table-striped table-hover main-page-table">
-    <thead>
-        <tr>
-            <th class="command-column">command</th>
-            <th>result</th>
-            <th>extra</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="command-column">/coffee_brewing</td>
-            <td>creates a record of coffee being brewed (default location: Blake)</td>
-            <td>You can also use '/coffee_brewing Gusto' to add a location and/or '/coffee_brewing Suite300 and it's delicious!' to add a description.</td>
-        </tr>
-        <tr>
-            <td class="command-column">/coffee_brewing #how</td>
-            <td>returns a quick guide to brewing a great pot of coffee</td>
-            <td>You can also click <a href="/how_to_brew" class="link-decoration">here</a> for location specific info.</td>
-        </tr>
-        <tr>
-            <td class="command-column">/coffee_brewing #out</td>
-            <td>returns instructions for what to do when we're out of coffee</td>
-            <td>More on this coming soon...</td>
-        </tr>
-        <tr>
-            <td class="command-column">/last_brewed</td>
-            <td>returns the last location and time coffee was brewed</td>
-            <td>You can use /last_brewed followed by a number to retrieve more brew records (useful if the last brew wasn't at your location!).</td>
-        </tr>
-    </tbody>
-</table>
-</p>
-<p>
-  @noah on slack with questions! hope you enjoy :)
-</p>
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+  <% end %>
 
-<a href="https://twitter.com/turingcoffeebot" class="link-decoration" data-show-count="false" target="_blank">follow @turingcoffeebot</a>
+  <h5>
+    <% if @most_recent_brew && current_user %>
+      Most recent coffee brew: <%= @most_recent_brew.location %> at <%= @most_recent_brew.created_at.strftime("%l:%M %p on %b %e") %>.
+    <% end %>
+  </h5>
+
+  <p>
+    List of 418-Bot commands:
+    <table class="col-7 centered table table-striped table-hover main-page-table">
+      <thead>
+          <tr>
+              <th class="command-column">command</th>
+              <th>result</th>
+              <th>extra</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="command-column">/coffee_brewing</td>
+              <td>creates a record of coffee being brewed (default location: Blake)</td>
+              <td>You can also use '/coffee_brewing Gusto' to add a location and/or '/coffee_brewing Suite300 and it's delicious!' to add a description.</td>
+          </tr>
+          <tr>
+              <td class="command-column">/coffee_brewing #how</td>
+              <td>returns a quick guide to brewing a great pot of coffee</td>
+              <td>You can also click <a href="/how_to_brew" class="link-decoration">here</a> for location specific info.</td>
+          </tr>
+          <tr>
+              <td class="command-column">/coffee_brewing #out</td>
+              <td>returns instructions for what to do when we're out of coffee</td>
+              <td>More on this coming soon...</td>
+          </tr>
+          <tr>
+              <td class="command-column">/last_brewed</td>
+              <td>returns the last location and time coffee was brewed</td>
+              <td>You can use /last_brewed followed by a number to retrieve more brew records (useful if the last brew wasn't at your location!).</td>
+          </tr>
+      </tbody>
+  </table>
+  </p>
+  <p>
+    @noah on slack with questions! hope you enjoy :)
+  </p>
+
+  <a href="https://twitter.com/turingcoffeebot" class="link-decoration" data-show-count="false" target="_blank">follow @turingcoffeebot</a>
 
 </div>

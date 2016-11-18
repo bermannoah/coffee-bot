@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
  end
 
  def destroy
-   reset_session
+   session.clear
    redirect_to root_path, flash: { success: "Signed out successfully." }
  end
 end
