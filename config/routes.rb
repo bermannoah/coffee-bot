@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
-  
+    
   namespace :api, defaults: { format: :json } do
     namespace :v1 do 
       post '/coffee_brewing', to: 'coffee#create'

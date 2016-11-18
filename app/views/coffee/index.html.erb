@@ -3,9 +3,12 @@
 
 <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.team&client_id=2329094327.104681505318"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
 
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
 
 <h5>
-  <% if @most_recent_brew %>
+  <% if @most_recent_brew && current_user %>
   Most recent coffee brew: <%= @most_recent_brew.location %> at <%= @most_recent_brew.created_at.strftime("%l:%M %p on %b %e") %>.
   <% end %>
 </h5>
