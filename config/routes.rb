@@ -22,12 +22,10 @@ Rails.application.routes.draw do
   get  '/auth/slack/callback', to: 'sessions#create'
   get '/logout',              to: 'sessions#destroy'
   get  '/sign_in_with_slack',  to: 'sessions#new'
-  
-  constraints SubdomainConstraint do
-    get '/list_of_brews', to: 'coffee#show'
-    get '/how_to_brew', to: 'coffee#how'
-  end
 
   get '/coffee_info', to: 'coffee#info'
+  get '/list_of_brews', to: 'coffee#show'
+  get '/how_to_brew', to: 'coffee#how'
+
 
 end
