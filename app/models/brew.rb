@@ -1,7 +1,6 @@
 class Brew < ApplicationRecord
   
   belongs_to :teams_brews
-  belongs_to :team, through: :teams_brews
 
   def self.handle_request(params)
     if params["text"].include?("#how")
@@ -20,7 +19,7 @@ class Brew < ApplicationRecord
         user_name: params["user_name"],
         location: location,
         description: text.join(' '),
-        team: params["team_id"]
+        team: create_team_if_necessary(params)
     )
     brew.brewed_coffee_response(params)
   end
@@ -89,5 +88,18 @@ class Brew < ApplicationRecord
   def self.get_limit(input)
     input.to_i != 0 ? input.to_i : 1
   end
+  
+  private
+  
+  def self.create_team_if_necessary(params)
+    team = Team.find_by(team_id: params["team_id"])
+    if team.nil?
+      team = Team.create(team_name: params["team_domain"], team_id: params["team_id"])
+    else 
+      team = team
+    end
+    team
+  end
+    
 
 end
