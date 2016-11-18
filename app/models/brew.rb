@@ -1,4 +1,7 @@
 class Brew < ApplicationRecord
+  
+  belongs_to :teams_brews
+  belongs_to :team, through: :teams_brews
 
   def self.handle_request(params)
     if params["text"].include?("#how")
@@ -16,9 +19,9 @@ class Brew < ApplicationRecord
     brew = Brew.create!(
         user_name: params["user_name"],
         location: location,
-        description: text.join(' ')
+        description: text.join(' '),
+        team: params["team_id"]
     )
-    CLIENT.update("Coffee is brewing at #{brew.location}.")
     brew.brewed_coffee_response(params)
   end
   
