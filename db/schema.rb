@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118152616) do
+ActiveRecord::Schema.define(version: 20161118160913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 20161118152616) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.text     "team"
+    t.integer  "team_id"
+    t.index ["team_id"], name: "index_brews_on_team_id", using: :btree
   end
 
   create_table "slack_login_users", force: :cascade do |t|
@@ -35,16 +36,9 @@ ActiveRecord::Schema.define(version: 20161118152616) do
 
   create_table "teams", force: :cascade do |t|
     t.string   "team_name"
-    t.text     "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teams_brews", force: :cascade do |t|
-    t.integer "brew_id"
-    t.integer "team_id"
-    t.index ["brew_id"], name: "index_teams_brews_on_brew_id", using: :btree
-    t.index ["team_id"], name: "index_teams_brews_on_team_id", using: :btree
+    t.text     "team_slack_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,6 +50,5 @@ ActiveRecord::Schema.define(version: 20161118152616) do
     t.string   "username"
   end
 
-  add_foreign_key "teams_brews", "brews"
-  add_foreign_key "teams_brews", "teams"
+  add_foreign_key "brews", "teams"
 end
