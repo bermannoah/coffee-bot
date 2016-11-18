@@ -5,13 +5,13 @@ module SlackService
     User.create_from_slack(user_info)
   end
 
-  # def self.sign_in_uri
-  #   "https://slack.com/oauth/authorize?" +
-  #     "scope=identity.basic,identity.team&" +
-  #     "client_id=#{ENV['slack_client_id']}&" +
-  #     "redirect_uri=#{redirect_uri}"
-  # end
-  # 
+  def self.sign_in_uri
+    "https://slack.com/oauth/authorize?" +
+      "scope=identity.basic,identity.team&" +
+      "client_id=#{ENV['slack_client_id']}&" +
+      "redirect_uri=#{redirect_uri}"
+  end
+  
   private
   
     def self.redirect_uri

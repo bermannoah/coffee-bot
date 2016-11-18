@@ -16,12 +16,14 @@
       <li class="tab-item">
           <a href="/">418 Bot</a>
       </li>
-      <li class="tab-item">
-          <a href="/list_of_brews">List of Brews</a>
-      </li>
-      <li class="tab-item">
-          <a href="/how_to_brew">Brewing Instructions</a>
-      </li>
+      <% if current_user %>
+        <li class="tab-item">
+            <a href="/list_of_brews">List of Brews</a>
+        </li>
+        <li class="tab-item">
+            <a href="/how_to_brew">Brewing Instructions</a>
+        </li>
+      <% end %>
       <li class="tab-item">
           <a href="/coffee_info">Coffee Information</a>
       </li>
