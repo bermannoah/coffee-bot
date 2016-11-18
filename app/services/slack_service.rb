@@ -26,7 +26,7 @@ module SlackService
       Faraday.new(:url => "https://slack.com") do |faraday|
         faraday.request  :url_encoded
         faraday.adapter  Faraday.default_adapter
-        faraday.basic_auth(ENV['slack_client_id'], ENV['API_SECRET'])
+        faraday.basic_auth(ENV['API_KEY'], ENV['API_SECRET'])
       end
     end
   
