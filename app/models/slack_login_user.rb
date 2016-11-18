@@ -24,7 +24,6 @@ class SlackLoginUser < ApplicationRecord
     else 
       team = team
     end
-    binding.pry
     team.id
   end
     
