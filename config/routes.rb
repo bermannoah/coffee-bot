@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   
   root to: "coffee#index"
   get  '/auth/slack/callback', to: 'sessions#create'
-  post '/logout',              to: 'sessions#destroy'
+  get '/logout',              to: 'sessions#destroy'
   get  '/sign_in_with_slack',  to: 'sessions#new'
   
   constraints SubdomainConstraint do

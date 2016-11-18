@@ -10,6 +10,7 @@ class SlackLoginUser < ApplicationRecord
     user = find_or_initialize_by(slack_uid: user_info["user"]["id"]) do |u|
       u.username           = user_info["user"]["name"]
       u.slack_access_token = user_info["access_token"]
+      u.team               = user_info["team"]["id"]
     end
       user.save ? user : false
   end
