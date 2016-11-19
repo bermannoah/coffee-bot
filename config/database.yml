@@ -24,6 +24,8 @@ test:
 production:
   <<: *default
   database: db/bot-418_production
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
   
 # production:
 #   adapter: postgresql
