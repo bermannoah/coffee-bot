@@ -13,9 +13,7 @@
   <% end %>
 
   <h5>
-    <% if show_coffee_on_index_page? %>
-      Most recent coffee brew: <%= @most_recent_brew.location %> at <%= @most_recent_brew.created_at.strftime("%l:%M %p on %b %e") %>.
-    <% end %>
+    <%= @display %>
   </h5>
 
   <p>

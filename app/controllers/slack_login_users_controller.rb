@@ -1,20 +1,16 @@
 class SlackLoginUsersController < ApplicationController
   
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:destroy]
 
   # GET /users/new
   def new
-    @user = User.new
-  end
-
-  # GET /users/1/edit
-  def edit
+    @user = SlackLoginUser.new
   end
 
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = SlackLoginUser.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -22,20 +18,6 @@ class SlackLoginUsersController < ApplicationController
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to index_path, notice: 'Account was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -54,7 +36,7 @@ class SlackLoginUsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = SlackLoginUser.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

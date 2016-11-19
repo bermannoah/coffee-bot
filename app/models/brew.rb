@@ -89,17 +89,16 @@ class Brew < ApplicationRecord
     input.to_i != 0 ? input.to_i : 1
   end
   
-  private
-  
-  def self.create_team_if_necessary(params)
-    team = Team.find_by(team_slack_id: params["team_id"])
-    if team.nil?
-      team = Team.create(team_name: params["team_domain"], team_slack_id: params["team_id"])
-    else 
-      team = team
+  def self.index_brew_display(current_user)
+    if current_user && Brew.where(team_id: current_user.team_id).last
+      brew = Brew.where(team_id: current_user.team_id).last
+      @display = "Most recent coffee brew: #{brew.location} at #{brew.created_at.strftime("%l:%M %p on %b %e")}."
+    elsif current_user && Brew.where(team_id: current_user.team_id).last.nil?
+      @display = "Use the commands below to start logging brews!"
+    else
+      @display = "Login with Slack to take a look at your coffee brews!"
     end
-    team
+    @display
   end
-    
 
 end

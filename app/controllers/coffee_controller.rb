@@ -1,9 +1,7 @@
 class CoffeeController < ApplicationController
   
   def index
-    if current_user 
-      @most_recent_brew = Brew.where(team_id: current_user.team_id).last
-    end
+    @display = Brew.index_brew_display(current_user)
   end
   
   def show
