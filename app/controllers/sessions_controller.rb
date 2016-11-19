@@ -25,4 +25,5 @@ class SessionsController < ApplicationController
    session.clear
    redirect_to root_path, flash: { success: "Signed out successfully." }
  end
+ 
 end

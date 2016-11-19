@@ -40,6 +40,7 @@ gem 'apartment'
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'foreman'
   gem 'pry-rails'
   gem "brakeman", :require => false
 end
