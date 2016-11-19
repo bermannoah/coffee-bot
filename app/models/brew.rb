@@ -88,7 +88,16 @@ class Brew < ApplicationRecord
   def self.get_limit(input)
     input.to_i != 0 ? input.to_i : 1
   end
-  
+    
+  def self.find_current_team(current_user)
+    slack_user = SlackLoginUser.find(current_user.id)
+    @team = Team.find(slack_user.team_id)
+  end
+    
+  def self.find_brew_by_team(team)
+    where(team_id: team.id).order(created_at: :desc)
+  end
+
   def self.index_brew_display(current_user)
     if current_user && Brew.where(team_id: current_user.team_id).last
       brew = Brew.where(team_id: current_user.team_id).last

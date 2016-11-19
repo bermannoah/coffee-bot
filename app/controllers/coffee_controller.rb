@@ -5,8 +5,8 @@ class CoffeeController < ApplicationController
   end
   
   def show
-    find_current_team
-    @brews = Brew.where(team_id: @team.id).order(created_at: :desc)
+    team = Brew.find_current_team(current_user)
+    @brews = Brew.find_brew_by_team(team)
   end
   
   def how
@@ -14,16 +14,5 @@ class CoffeeController < ApplicationController
   
   def info
   end
-  
-  private
-  
-  def show_to_user
-    @slack_user = SlackLoginUser.find(current_user.id)
-  end
-  
-  def find_current_team
-    show_to_user
-    @team = Team.find(@slack_user.team_id)
-  end
-  
+    
 end
