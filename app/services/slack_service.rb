@@ -1,4 +1,5 @@
 module SlackService
+  
   def self.authenticate(params)
     return false if params["error"] || params["code"].nil?
     user_info = fetch_info_via_code(params["code"])
@@ -37,4 +38,5 @@ module SlackService
       end
       JSON.parse(response.body)
     end
+    
 end
