@@ -1,16 +1,5 @@
-class SubdomainConstraint
-  def self.matches?(request)
-    subdomains = %w{ www admin }
-    request.subdomain.present? && !subdomains.include?(request.subdomain)
-  end
-end
-
 Rails.application.routes.draw do
 
-  namespace :admin do
-    resources :users
-  end
-    
   namespace :api, defaults: { format: :json } do
     namespace :v1 do 
       post '/coffee_brewing', to: 'coffee#create'
