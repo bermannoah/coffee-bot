@@ -99,9 +99,9 @@ class Brew < ApplicationRecord
     if current_user && retrieve_recent_brew(current_user)
       return "Most recent coffee brew: #{@recent_brew.location} at #{@recent_brew.created_at.strftime("%l:%M %p on %b %e")}."
     elsif current_user && !retrieve_recent_brew(current_user)
-      return "Use the commands below to start logging brews!"
+      return "No coffee has been brewed yet. Use the commands below to start logging brews!"
     else
-      return "Login with Slack to take a look at your coffee brews!"
+      return "Sign in with Slack to start logging your brews!"
     end
   end
 
@@ -109,7 +109,7 @@ class Brew < ApplicationRecord
     if current_user.nil?
       return false
     else  
-      @recent_brew = Brew.where(team_id: current_user.team_id).last
+      @recent_brew = where(team_id: current_user.team_id).last
     end
   end
   
