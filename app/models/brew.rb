@@ -15,11 +15,11 @@ class Brew < ApplicationRecord
   def self.create_new_brew(params)
     text = params["text"].split(' ')
     location = text.shift || params["team_domain"]
-    brew = create!(
+    team = find_team(params)
+    brew = team.brews.create!(
         user_name: params["user_name"],
         location: location,
-        description: text.join(' '),
-        team: Team.find_team_from_params(params)
+        description: text.join(' ')
     )
     brew.brewed_coffee_response(params)
   end
@@ -88,6 +88,10 @@ class Brew < ApplicationRecord
   def self.get_limit(input)
     input.to_i != 0 ? input.to_i : 1
   end
+        
+  def self.find_team(params)
+    Team.find_team_from_params(params)
+  end      
         
   def self.find_brew_by_team(current_user)
     slack_user = SlackLoginUser.find(current_user.id)
