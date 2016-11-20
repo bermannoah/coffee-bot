@@ -88,26 +88,29 @@ class Brew < ApplicationRecord
   def self.get_limit(input)
     input.to_i != 0 ? input.to_i : 1
   end
-    
-  def self.find_current_team(current_user)
+        
+  def self.find_brew_by_team(current_user)
     slack_user = SlackLoginUser.find(current_user.id)
-    @team = Team.find(slack_user.team_id)
-  end
-    
-  def self.find_brew_by_team(team)
+    team = Team.find(slack_user.team_id)
     where(team_id: team.id).order(created_at: :desc)
   end
-
+  
   def self.index_brew_display(current_user)
-    if current_user && Brew.where(team_id: current_user.team_id).last
-      brew = Brew.where(team_id: current_user.team_id).last
-      @display = "Most recent coffee brew: #{brew.location} at #{brew.created_at.strftime("%l:%M %p on %b %e")}."
-    elsif current_user && Brew.where(team_id: current_user.team_id).last.nil?
-      @display = "Use the commands below to start logging brews!"
+    if current_user && retrieve_recent_brew(current_user)
+      return "Most recent coffee brew: #{@recent_brew.location} at #{@recent_brew.created_at.strftime("%l:%M %p on %b %e")}."
+    elsif current_user && !retrieve_recent_brew(current_user)
+      return "Use the commands below to start logging brews!"
     else
-      @display = "Login with Slack to take a look at your coffee brews!"
+      return "Login with Slack to take a look at your coffee brews!"
     end
-    @display
   end
 
+  def self.retrieve_recent_brew(current_user)
+    if current_user.nil?
+      return false
+    else  
+      @recent_brew = Brew.where(team_id: current_user.team_id).last
+    end
+  end
+  
 end

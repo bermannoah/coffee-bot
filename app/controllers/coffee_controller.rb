@@ -5,8 +5,7 @@ class CoffeeController < ApplicationController
   end
   
   def show
-    team = Brew.find_current_team(current_user)
-    @brews = Brew.find_brew_by_team(team)
+    @brews = Brew.find_brew_by_team(current_user)
   end
   
   def how
