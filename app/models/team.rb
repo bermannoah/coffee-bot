@@ -12,6 +12,16 @@ class Team < ActiveRecord::Base
     team.id
   end
   
+  def self.find_team_from_params(params)
+    team = Team.find_by(team_name: params["team_domain"])
+      if team.nil?
+        team = Team.create(team_name: params["team_domain"], team_id: params["team_id"])
+      else 
+        team = team
+      end
+   team
+  end
+  
   private
   
   def create_tenant

@@ -14,12 +14,12 @@ class Brew < ApplicationRecord
 
   def self.create_new_brew(params)
     text = params["text"].split(' ')
-    location = text.shift || "Blake"
-    brew = Brew.create!(
+    location = text.shift || params["team_domain"]
+    brew = create!(
         user_name: params["user_name"],
         location: location,
         description: text.join(' '),
-        team: create_team_if_necessary(params)
+        team: Team.find_team_from_params(params)
     )
     brew.brewed_coffee_response(params)
   end
