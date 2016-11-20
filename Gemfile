@@ -10,6 +10,10 @@ gem 'responders'
 gem 'figaro'
 gem 'twitter'
 gem "brakeman", :require => false
+gem 'rb-readline'
+gem 'faraday'
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
 gem 'bundler'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,8 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
+gem 'bcrypt', '~> 3.1.7'
+gem 'apartment'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -38,13 +42,16 @@ gem 'jbuilder', '~> 2.5'
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'foreman'
   gem 'pry-rails'
+  gem "brakeman", :require => false
 end
 
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails_real_favicon'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

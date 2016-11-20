@@ -1,4 +1,6 @@
 class Brew < ApplicationRecord
+  
+  belongs_to :team
 
   def self.handle_request(params)
     if params["text"].include?("#how")
@@ -12,13 +14,13 @@ class Brew < ApplicationRecord
 
   def self.create_new_brew(params)
     text = params["text"].split(' ')
-    location = text.shift || "Blake"
-    brew = Brew.create!(
+    location = text.shift || params["team_domain"]
+    team = find_team(params)
+    brew = team.brews.create!(
         user_name: params["user_name"],
         location: location,
         description: text.join(' ')
     )
-    CLIENT.update("Coffee is brewing at #{brew.location}.")
     brew.brewed_coffee_response(params)
   end
   
@@ -86,5 +88,33 @@ class Brew < ApplicationRecord
   def self.get_limit(input)
     input.to_i != 0 ? input.to_i : 1
   end
+        
+  def self.find_team(params)
+    Team.find_team_from_params(params)
+  end      
+        
+  def self.find_brew_by_team(current_user)
+    slack_user = SlackLoginUser.find(current_user.id)
+    team = Team.find(slack_user.team_id)
+    where(team_id: team.id).order(created_at: :desc)
+  end
+  
+  def self.index_brew_display(current_user)
+    if current_user && retrieve_recent_brew(current_user)
+      return "Most recent coffee brew: #{@recent_brew.location} at #{@recent_brew.created_at.strftime("%l:%M %p on %b %e")}."
+    elsif current_user && !retrieve_recent_brew(current_user)
+      return "No coffee has been brewed yet. Use the commands below to start logging brews!"
+    else
+      return "Sign in with Slack to start logging your brews!"
+    end
+  end
 
+  def self.retrieve_recent_brew(current_user)
+    if current_user.nil?
+      return false
+    else  
+      @recent_brew = where(team_id: current_user.team_id).last
+    end
+  end
+  
 end

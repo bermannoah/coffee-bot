@@ -8,9 +8,13 @@ Rails.application.routes.draw do
   end
   
   root to: "coffee#index"
-  
+  get  '/auth/slack/callback', to: 'sessions#create'
+  get '/logout',              to: 'sessions#destroy'
+  get  '/sign_in_with_slack',  to: 'sessions#new'
+
+  get '/coffee_info', to: 'coffee#info'
   get '/list_of_brews', to: 'coffee#show'
   get '/how_to_brew', to: 'coffee#how'
-  get '/coffee_info', to: 'coffee#info'
+
 
 end

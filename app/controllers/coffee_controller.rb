@@ -1,11 +1,11 @@
 class CoffeeController < ApplicationController
   
   def index
-    @most_recent_brew = Brew.last
+    @display = Brew.index_brew_display(current_user)
   end
   
   def show
-    @brews = Brew.order(created_at: :desc)
+    @brews = Brew.find_brew_by_team(current_user)
   end
   
   def how
@@ -13,5 +13,5 @@ class CoffeeController < ApplicationController
   
   def info
   end
-  
+    
 end
