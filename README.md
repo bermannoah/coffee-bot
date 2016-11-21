@@ -1,6 +1,17 @@
-# 418-Bot (known elsewhere as Coffee-Bot)
+# 418-Bot (though it mainly goes by Coffee-Bot)
 
 ## I'm a coffee-pot slack-bot. 
+
+## How to use the Coffee-Bot
+All you should need to do is go to the [site](https://coffeebot.coffee) and login via Slack. If your team is already using Coffee-Bot, then that should be it. If not, you will likely need to to add the app to your Team as part of the login process. Depending on your Slack team's settings (and your level of access to the system) you may need an admin to add two slash commands:
+
+`/coffee_brewing` - a POST request to https://coffeebot.coffee/api/v1/coffee_brewing
+
+`/last_brewed` - a GET request to https://coffeebot.coffee/api/v1/coffee_brewing
+
+(Both URLs are the same, though the request type is different.)
+
+After this, everything should be running smoothly. Feel free to email me - noah at noahberman dot org - if you run into any trouble.
 
 ### Technical details
 
