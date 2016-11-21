@@ -1,10 +1,17 @@
 .DS_Store
 
-tmp
+tmp/
+
+.bash_profile
 
 log
 
-./config/secrets.yml
-# Ignore application configuration
-/config/application.yml
+public/assets
+
+*.swp
+
+# Ignore secret config files
+config/local_env.yml
+config/secrets.yml
+config/application.yml
 .env
