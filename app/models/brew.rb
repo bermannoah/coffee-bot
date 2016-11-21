@@ -105,8 +105,6 @@ class Brew < ApplicationRecord
       return "Most recent coffee brew: #{@recent_brew.location} at #{@recent_brew.created_at.strftime("%l:%M %p on %b %e")}."
     elsif current_user && !retrieve_recent_brew(current_user)
       return "No coffee has been brewed yet. Use the commands below to start logging brews!"
-    else
-      return "Sign in with Slack ⬆️  to start logging your brews!"
     end
   end
 

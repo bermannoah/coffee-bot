@@ -13,9 +13,9 @@
     <%= content_tag :div, value, class: "flash #{key}" %>
   <% end %>
   <div>
-  
-    <%= link_to "#{@display}", list_of_brews_path, class: "btn btn-lg main-element-distancer" %>
-  
+    <% if current_user %>  
+    	<%= link_to "#{@display}", list_of_brews_path, class: "btn btn-lg main-element-distancer" %>
+    <% end %>
   </div>
   <p>
    <span class="main-element-distancer"> List of Coffee-Bot commands:</span>
