@@ -9,7 +9,7 @@ module SlackService
   def self.sign_in_uri
     "https://slack.com/oauth/authorize?" +
       "scope=identity.basic,identity.team&" +
-      "client_id=#{ENV['API_KEY']}&" +
+      "client_id=#{ENV['SLACK_API_KEY']}&" +
       "redirect_uri=#{redirect_uri}"
   end
   

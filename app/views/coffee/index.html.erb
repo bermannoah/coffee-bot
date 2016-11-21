@@ -1,23 +1,24 @@
 <div class="text-center">
 
-<h2>Welcome to ☕️ 418-Bot!</h2>
+<h2>Welcome to ☕️ Coffee-Bot!</h2>
+
 
   <% if current_user.nil? %>
     <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.team&client_id=107333465906.108008566694"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
   <% else %>
-    <%= link_to "Logout", logout_path, method: :destroy %>
+    <%= link_to "Logout", logout_path, method: :destroy, class: "btn main-element-distancer" %>
   <% end %>
 
   <% flash.each do |key, value| %>
     <%= content_tag :div, value, class: "flash #{key}" %>
   <% end %>
-
-  <h5>
-    <%= @display %>
-  </h5>
-
+  <div>
+  
+    <%= link_to "#{@display}", list_of_brews_path, class: "btn btn-lg main-element-distancer" %>
+  
+  </div>
   <p>
-    List of 418-Bot commands:
+   <span class="main-element-distancer"> List of Coffee-Bot commands:</span>
     <table class="col-7 centered table table-striped table-hover main-page-table">
       <thead>
           <tr>
@@ -30,17 +31,17 @@
           <tr>
               <td class="command-column">/coffee_brewing</td>
               <td>creates a record of coffee being brewed (default location is your Slack team name)</td>
-              <td>You can also use '/coffee_brewing Blake' to add a custom location (in this case, Blake) and/or '/coffee_brewing Blake and it's delicious!' to add a description.</td>
+              <td>You can also use '/coffee_brewing BlueAnt' to add a custom location (in this case, BlueAnt) and/or '/coffee_brewing BlueAnt Get ready - it's delicious!' to add a description.</td>
           </tr>
           <tr>
               <td class="command-column">/coffee_brewing #how</td>
               <td>returns a quick guide to brewing a great pot of coffee</td>
-              <td>You can also click <a href="/how_to_brew" class="link-decoration">here</a> for location specific info.</td>
+	      <td>More soon!</td>
           </tr>
           <tr>
               <td class="command-column">/coffee_brewing #out</td>
-              <td>returns instructions for what to do when we're out of coffee</td>
-              <td>More on this coming soon...</td>
+              <td>returns instructions for what to do when you're out of coffee</td>
+              <td>More soon!</td>
           </tr>
           <tr>
               <td class="command-column">/last_brewed</td>

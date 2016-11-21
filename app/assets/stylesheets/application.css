@@ -19,6 +19,10 @@
   border: 1px solid black;
 }
 
+.main-element-distancer {
+  margin: 10px;
+}
+
 .link-decoration {
   text-decoration: none;
 }
