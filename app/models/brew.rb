@@ -36,9 +36,10 @@ class Brew < ApplicationRecord
     }
   end
   
-  def self.get_last_brewed(limit)
+  def self.get_last_brewed(limit, params)
     list = ''
-    Brew.order(created_at: :desc).limit(limit).each do |brew|
+    team = Team.find_by(team_slack_id: params["team_id"])
+	Brew.where(team_id: team.id).order(created_at: :desc).limit(limit).each do |brew|
       time = brew.created_at.strftime("%I:%M:%S %p")
       list << "Coffee was brewed in #{brew.location} at #{time}. | #{brew.description}\n"
     end
