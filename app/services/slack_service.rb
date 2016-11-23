@@ -34,7 +34,6 @@ module SlackService
     end
   
     def self.fetch_info_via_code(code)
-	print(ENV['API_KEY'])    
   	response = conn.get do |req|
         req.url "/api/oauth.access?redirect_uri=#{redirect_uri}"
         req.params["code"] = code
