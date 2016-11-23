@@ -9,8 +9,6 @@ gem 'pg'
 gem 'responders'
 gem 'figaro'
 gem 'twitter'
-gem "brakeman", :require => false
-gem 'rb-readline'
 gem 'faraday'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'

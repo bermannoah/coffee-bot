@@ -36,12 +36,13 @@ class Brew < ApplicationRecord
     }
   end
   
-  def self.get_last_brewed(limit)
+  def self.get_last_brewed(limit, params)
     list = ''
-    Brew.order(created_at: :desc).limit(limit).each do |brew|
-      time = brew.created_at.strftime("%I:%M:%S %p")
-      list << "Coffee was brewed in #{brew.location} at #{time}. | #{brew.description}\n"
-    end
+      team = Team.find_by(team_slack_id: params["team_id"])
+      team.brews.order(created_at: :desc).limit(limit).each do |brew|
+      	time = brew.created_at.strftime("%I:%M:%S %p")
+      	list << "Coffee was brewed in #{brew.location} at #{time}. | #{brew.description}\n"
+      end
     {
       "text": "Last coffee brew(s):",
       "attachments": [
@@ -58,17 +59,17 @@ class Brew < ApplicationRecord
       "attachments": [
         {
           "text": 
-                 "These instructions work for Blake. To see info for all\n
-                  Turing locations, visit https://turingcoffee.herokuapp.com/how_to_brew\n
-                  Here's how to brew coffee:\n
+                 "These are pretty general instructions for brewing coffee.\n
+                  For specific methods - Blue Bottle has a cool guide:\n
+		  https://bluebottlecoffee.com/preparation-guides\n
+                  Here's how to brew coffee in a standard brewer:\n
                   1. Make sure coffee pot and grounds basket are empty and rinsed out.\n
                   2. Set grinder to medium (or one notch below).\n
                   3. Grind beans and fill filter until it is just over half full.\n
-                  4. Check area on brewer where the basket will go for grounds. Clean if necessary!\n
+                  4. Clean whatever container your brewer brews into!\n
                   5. Put filter into basket. Place basket into brewer.\n
-                  6. Place coffee pot in its usual place.\n
-                  7. Press the start button (or equivalent).\n
-                  8. Let everyone know there's a new pot with /coffee_brewing! :)"
+                  6. Press the start button (or equivalent).\n
+                  7. Let everyone know there's a new pot with /coffee_brewing! :)"
               }
             ]
     }
@@ -76,10 +77,10 @@ class Brew < ApplicationRecord
   
   def self.we_are_out_of_coffee(params)
     {
-      "text": "Hey #{params["user_name"]} thanks for letting us know!",
+      "text": "Hey #{params["user_name"]} thanks for being so conscientious!",
       "attachments": [
         {
-          "text":"For now, please let your SAB reps know so they can update the trello board."
+          "text":"...but this feature is still in development."
               }
             ]
     }
@@ -104,8 +105,6 @@ class Brew < ApplicationRecord
       return "Most recent coffee brew: #{@recent_brew.location} at #{@recent_brew.created_at.strftime("%l:%M %p on %b %e")}."
     elsif current_user && !retrieve_recent_brew(current_user)
       return "No coffee has been brewed yet. Use the commands below to start logging brews!"
-    else
-      return "Sign in with Slack to start logging your brews!"
     end
   end
 
