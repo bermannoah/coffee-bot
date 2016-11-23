@@ -27,8 +27,14 @@ View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framewo
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/418-bot/blob/master/basics.gif)
 
-### A view page
-![view of this iteration of the site](https://github.com/bermannoah/418-bot/blob/master/coffee_pot_screen_shot.jpg)
+### Logged out
+![view of the index page pre login](https://github.com/bermannoah/repo-images/blob/master/cb_logged_out.jpg)
+
+### Logged in
+![view of the index page logged in](https://github.com/bermannoah/repo-images/blob/master/cb_logged_in.jpg)
+
+### Logged in, viewing list of brews
+![view of the list of brews while logged in](https://github.com/bermannoah/repo-images/blob/master/cb_list_of_brews.jpg)
 
 ### TODO: 
  - complete test suite!
