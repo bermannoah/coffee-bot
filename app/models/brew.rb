@@ -38,11 +38,11 @@ class Brew < ApplicationRecord
   
   def self.get_last_brewed(limit, params)
     list = ''
-    team = Team.find_by(team_slack_id: params["team_id"])
-	Brew.where(team_id: team.id).order(created_at: :desc).limit(limit).each do |brew|
-      time = brew.created_at.strftime("%I:%M:%S %p")
-      list << "Coffee was brewed in #{brew.location} at #{time}. | #{brew.description}\n"
-    end
+      team = Team.find_by(team_slack_id: params["team_id"])
+      team.brews.order(created_at: :desc).limit(limit).each do |brew|
+      	time = brew.created_at.strftime("%I:%M:%S %p")
+      	list << "Coffee was brewed in #{brew.location} at #{time}. | #{brew.description}\n"
+      end
     {
       "text": "Last coffee brew(s):",
       "attachments": [
