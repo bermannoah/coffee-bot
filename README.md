@@ -25,7 +25,7 @@ View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framewo
 [![Code Climate](https://codeclimate.com/github/bermannoah/418-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/418-bot)
 
 ### Basics of interacting with the bot
-![gif of interaction](https://github.com/bermannoah/418-bot/blob/master/basics.gif)
+![gif of interaction](https://github.com/bermannoah/repo-images/blob/master/cb_basics.gif)
 
 ### Logged out
 ![view of the index page pre login](https://github.com/bermannoah/repo-images/blob/master/cb_logged_out.jpg)
