@@ -1,13 +1,13 @@
+# Ignore DS_Store files
 .DS_Store
 
-tmp/
-
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
 .bash_profile
-
-log
-
-public/assets
-
+public/assets/*
 *.swp
 
 # Ignore secret config files
@@ -16,5 +16,6 @@ config/secrets.yml
 config/application.yml
 .env
 
-# Ignore coverage folder
-coverage/
+# Ignore test-generated files
+coverage/*
+spec/cassettes/*

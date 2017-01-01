@@ -8,7 +8,6 @@ gem 'unicorn'
 gem 'pg'
 gem 'responders'
 gem 'figaro'
-gem 'twitter'
 gem 'faraday'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -42,7 +41,18 @@ gem 'apartment'
 group :development, :test do
   gem 'foreman'
   gem 'pry-rails'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'fabrication'
+  gem 'launchy'
+  gem 'database_cleaner'
   gem "brakeman", :require => false
+end
+
+group :test do
+  gem 'webmock'
+  gem 'simplecov'
+  gem 'vcr'
 end
 
 group :development do
