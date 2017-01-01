@@ -6,11 +6,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
 .bash_profile
-
 public/assets/*
-
 *.swp
 
 # Ignore secret config files
@@ -20,6 +17,5 @@ config/application.yml
 .env
 
 # Ignore test-generated files
-/coverage/*
-
+coverage/*
 spec/cassettes/*

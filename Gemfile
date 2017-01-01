@@ -62,4 +62,8 @@ group :development do
   gem 'rails_real_favicon'
 end
 
+group :test do
+	gem 'rake'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
