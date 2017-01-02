@@ -28,6 +28,17 @@ describe "Existing user visits home page" do
       expect(page).to have_content("#{brew.location}")
     end
 
+    scenario "if coffee hasn't been brewed they see a relevant alert" do
+      team = Fabricate(:team)
+      user = Fabricate(:slack_login_user, team_id: team.id)
+      stub_logged_in_user(user)
+      
+      visit root_path
+      
+      expect(page).to have_content("List of Coffee-Bot commands:")
+      expect(page).to have_content("No coffee has been brewed yet. Use the commands below to start logging brews!")
+    end
+
     scenario "they see logged-in only links" do
       team = Fabricate(:team)
       user = Fabricate(:slack_login_user, team_id: team.id)
