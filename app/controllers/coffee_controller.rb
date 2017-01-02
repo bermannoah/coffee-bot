@@ -1,4 +1,5 @@
 class CoffeeController < ApplicationController
+  before_action :logged_in?, only: [:show, :how]
   
   def index
     @display = Brew.index_brew_display(current_user)

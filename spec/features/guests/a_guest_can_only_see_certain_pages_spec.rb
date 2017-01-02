@@ -1,7 +1,7 @@
 require 'rails_helper' 
 
 describe "A guest user visits the site" do
-  context "a guest can see relevant information" do
+  context "a guest can see certain pages" do
     scenario "they see how-to info about the app" do
       visit root_path
       
@@ -26,6 +26,16 @@ describe "A guest user visits the site" do
       expect(page).to have_content("More coming soon...")
       expect(page).to have_content("For now, here's a guide to describing coffee flavor.")
       expect(page).to have_css("img[alt='Scaa flavorwheel']")
+    end
+  end
+  
+  context "a guest cannot see certain pages" do
+    scenario "they can't visit the list of brews" do
+      visit list_of_brews_path
+      
+      expect(page).to have_http_status(404)
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+      expect(page).to have_content("You may have mistyped the address or the page may have moved.")
     end
   end
 end
