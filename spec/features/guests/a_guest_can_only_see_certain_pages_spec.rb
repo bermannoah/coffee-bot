@@ -37,5 +37,13 @@ describe "A guest user visits the site" do
       expect(page).to have_content("The page you were looking for doesn't exist.")
       expect(page).to have_content("You may have mistyped the address or the page may have moved.")
     end
+
+    scenario "they can't visit the specific instructions for brewing" do
+      visit how_to_brew_path
+      
+      expect(page).to have_http_status(404)
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+      expect(page).to have_content("You may have mistyped the address or the page may have moved.")
+    end
   end
 end
