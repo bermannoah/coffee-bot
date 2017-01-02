@@ -1,8 +1,8 @@
 require 'rails_helper' 
 
 describe "A guest user visits the site" do
-  context "a guest can see the main page" do
-    scenario "they see relevant content" do
+  context "a guest can see relevant information" do
+    scenario "they see how-to info about the app" do
       visit root_path
       
       expect(page).to have_content("List of Coffee-Bot commands:")
@@ -10,10 +10,22 @@ describe "A guest user visits the site" do
       expect(page).to have_content("/coffee_brewing #how")
       expect(page).to have_content("/last_brewed")
       expect(page).to have_content("If you're installing this for the first time")
-      
-      expect(page).to have_css("img[alt='Sign in with Slack']")
+      expect(page).to have_content("Coffee Information")
+    end
 
+    scenario "they see the sign in with slack button" do
+      visit root_path
+            
+      expect(page).to have_css("img[alt='Sign in with Slack']")
       expect(page).to_not have_content("Logout")
+    end
+
+    scenario "they see coffee brewing info" do
+      visit coffee_info_path
+            
+      expect(page).to have_content("More coming soon...")
+      expect(page).to have_content("For now, here's a guide to describing coffee flavor.")
+      expect(page).to have_css("img[alt='Scaa flavorwheel']")
     end
   end
 end
