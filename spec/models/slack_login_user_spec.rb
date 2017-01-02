@@ -85,11 +85,11 @@ describe SlackLoginUser, type: :model do
   context 'with invalid slack user info' do
     it 'does not create a new user' do
       user_data = {"ok"=>true,
-                   "access_token"=>"1234-xxxxxxxxxx",
+                   "access_token"=>"4321-xxxxxxxxxx",
                    "user"=>{"name"=>nil,
                             "id"=>nil},
-                   "team"=>{"id"=>"QWERTY1234",
-                            "domain"=>"Problems"}
+                   "team"=>{"id"=>"QWERTY12345",
+                            "domain"=>"Problems Oh No"}
                   }
       new_user = SlackLoginUser.create_from_slack(user_data)
     
