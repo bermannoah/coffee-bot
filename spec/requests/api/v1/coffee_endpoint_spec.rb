@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "coffee endpoint" do
+describe "coffee_brewing endpoint" do
   context 'POST /api/v1/coffee_brewing' do
-    it 'creates a new coffee' do
+    it 'creates a new brew' do
       team = Fabricate(:team)
       user = Fabricate(:slack_login_user, team_id: team.id)
       data = { team_id: team.id, 
@@ -25,7 +25,7 @@ describe "coffee endpoint" do
       expect(brew["attachments"][0]["text"]).to eq("Coffee is very good!")
     end
     
-    it 'creates a new coffee with only a location' do
+    it 'creates a new brew with only a location' do
       team = Fabricate(:team)
       user = Fabricate(:slack_login_user, team_id: team.id)
       data = { team_id: team.id, 
@@ -47,7 +47,7 @@ describe "coffee endpoint" do
       expect(brew["text"]).to eq("Hey #{user.username} thanks for brewing coffee! You're a hero!")
     end
     
-    it 'creates a new coffee without a location' do
+    it 'creates a new brew without a location' do
       team = Fabricate(:team)
       user = Fabricate(:slack_login_user, team_id: team.id)
       data = { team_id: team.id, 
@@ -67,6 +67,34 @@ describe "coffee endpoint" do
       expect(Brew.count).to eq(1)
       expect(Brew.first.location).to eq(team.team_name)
       expect(brew["text"]).to eq("Hey #{user.username} thanks for brewing coffee! You're a hero!")
+    end
+    
+    it 'does not create a new brew without a team' do
+      team = Fabricate(:team)
+      user = Fabricate(:slack_login_user, team_id: team.id)
+      data = { 
+               user_id: user.id,
+               user_name: user.username,
+               command: "/coffee_brewing",
+               text: ""
+             }
+      expect(Brew.count).to eq(0)
+      
+      expect{ post "/api/v1/coffee_brewing", params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'} }.to raise_error(NoMethodError)
+    end
+    
+    it 'does not create a new brew without a user' do
+      team = Fabricate(:team)
+      user = Fabricate(:slack_login_user, team_id: team.id)
+      data = { 
+               user_id: user.id,
+               user_name: user.username,
+               command: "/coffee_brewing",
+               text: ""
+             }
+      expect(Brew.count).to eq(0)
+      
+      expect{ post "/api/v1/coffee_brewing", params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'} }.to raise_error(NoMethodError)
     end
   end
 end
