@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe SlackService, type: :service do
+describe SlackService, type: :service do  
   context "returns error from Slack validation" do
     scenario "#authenticate returns false" do
       params = {"error" => "access_denied",

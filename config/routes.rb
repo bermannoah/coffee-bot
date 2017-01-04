@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       post '/coffee_brewing', to: 'coffee#create'
       get '/coffee_brewing', to: 'coffee#show'
+      post '/make', to: 'make#create'
     end
   end
   

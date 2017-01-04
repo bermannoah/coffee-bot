@@ -5,7 +5,8 @@ describe "coffee_brewing endpoint POST requests" do
     it 'creates a new brew' do
       team = Fabricate(:team)
       user = Fabricate(:slack_login_user, team_id: team.id)
-      data = { team_id: team.id, 
+      data = { 
+               team_id: team.id, 
                team_domain: team.team_name,
                user_id: user.id,
                user_name: user.username,
