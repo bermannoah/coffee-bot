@@ -25,7 +25,7 @@ class Team < ActiveRecord::Base
   private
   
   def create_tenant
-    Apartment::Tenant.create(Team.last.team_name)
+    Apartment::Tenant.create(team_name)
   end
   
 end

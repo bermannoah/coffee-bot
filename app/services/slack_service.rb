@@ -26,18 +26,18 @@ module SlackService
     def self.conn
       Faraday.new(:url => "https://slack.com") do |faraday|
         faraday.params["client_id"] = ENV['SLACK_API_KEY']
-	faraday.params["client_secret"] = ENV['SLACK_API_SECRET']
-	faraday.request  :url_encoded
-        faraday.adapter  Faraday.default_adapter
+	      faraday.params["client_secret"] = ENV['SLACK_API_SECRET']
+	      faraday.request :url_encoded
+        faraday.adapter Faraday.default_adapter
         faraday.basic_auth(ENV['SLACK_API_KEY'], ENV['SLACK_API_SECRET'])
       end
     end
   
     def self.fetch_info_via_code(code)
-  	response = conn.get do |req|
-        req.url "/api/oauth.access?redirect_uri=#{redirect_uri}"
-        req.params["code"] = code
-     end
+  	  response = conn.get do |req|
+          req.url "/api/oauth.access?redirect_uri=#{redirect_uri}"
+          req.params["code"] = code
+      end
       JSON.parse(response.body)
     end
     

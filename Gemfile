@@ -50,10 +50,10 @@ group :test do
   gem 'database_cleaner'
   gem 'fabrication'
   gem 'webmock'
-  gem 'brakeman', :require => false
+  gem 'brakeman',  require: false
   gem 'simplecov', require: false
   gem 'vcr'
-	gem 'rake'
+  gem "codeclimate-test-reporter", "~> 1.0.0"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
