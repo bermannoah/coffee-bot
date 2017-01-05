@@ -15,9 +15,10 @@ describe "make endpoint POST requests" do
              }
     
       post "/api/v1/make", params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'}
-      binding.pry
+
       result = JSON.parse(response.body)
       expect(response).to be_success
+      expect(result["message"]).to eq("Heating water for coffee!")
     end
   end
 end
