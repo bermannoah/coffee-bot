@@ -3,7 +3,7 @@
 ## I'm a coffee-pot slack-bot. 
 
 ## How to use the Coffee-Bot
-All you should need to do is go to the [site](https://coffeebot.coffee) and login via Slack. If your team is already using Coffee-Bot, then that should be it. If not, you will likely need to to add the app to your Team as part of the login process. You (or an admin) will also need to add two slash commands:
+All you should need to do is go to the [site](https://coffeebot.coffee) and login via Slack. If your team is already using Coffee-Bot, then that should be it. If not, you will likely need to to add the app to your Team as part of the login process. You (or an admin) will also need to add two slash command integrations:
 
 `/coffee_brewing` - a POST request to https://coffeebot.coffee/api/v1/coffee_brewing
 
