@@ -24,6 +24,8 @@ View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framewo
 
 [![Code Climate](https://codeclimate.com/github/bermannoah/418-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/418-bot)
 
+[![security](https://hakiri.io/github/bermannoah/418-bot/development.svg)](https://hakiri.io/github/bermannoah/418-bot/development)
+
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/repo-images/blob/master/cb_basics.gif)
 
