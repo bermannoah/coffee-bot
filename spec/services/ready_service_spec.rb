@@ -6,35 +6,34 @@ describe ReadyService, type: :service do
       text = "coffee ready"
       maker_bot_response = ReadyService.confirm_and_brew(text)
 
-      expect(maker_bot_response).to be_a(Hash)
-      expect(maker_bot_response).to have_key("message")
-      expect(maker_bot_response).to have_value("Starting to brew coffee!")
+      expect(maker_bot_response["text"]).to be_a(String)
+      expect(maker_bot_response["text"]).to eq("Starting to brew coffee!")
     end
     
-    xscenario "it gets the right response for different kinds of drinks", :vcr do
-      maker_bot_response_1 = NewMakeService.start_making_a_drink("coffee")
-      maker_bot_response_2 = NewMakeService.start_making_a_drink("tea")
-      maker_bot_response_3 = NewMakeService.start_making_a_drink("water")
+    scenario "it gets the right response for different kinds of drinks", :vcr do
+      maker_bot_response_1 = ReadyService.confirm_and_brew("coffee ready")
+      maker_bot_response_2 = ReadyService.confirm_and_brew("tea ready")
+      maker_bot_response_3 = ReadyService.confirm_and_brew("water ready")
 
-      expect(maker_bot_response_1).to have_value("Starting to brew coffee!")
-      expect(maker_bot_response_2).to have_value("Heating water for tea!")
-      expect(maker_bot_response_3).to have_value("Heating water!")
+      expect(maker_bot_response_1["text"]).to eq("Starting to brew coffee!")
+      expect(maker_bot_response_2[:text]).to eq("Sorry, Coffee Maker Bot is unable to brew this at the moment.")
+      expect(maker_bot_response_3[:text]).to eq("Sorry, Coffee Maker Bot is unable to brew this at the moment.")
     end
 
-    xscenario "it returns an error for an improper request", :vcr do
-      maker_bot_response_1 = NewMakeService.start_making_a_drink("balloons")
-      maker_bot_response_2 = NewMakeService.start_making_a_drink(1234)
-      maker_bot_response_3 = NewMakeService.start_making_a_drink("Robert'); DROP TABLE Makes;--")
+    scenario "it returns an error for an improper request", :vcr do
+      maker_bot_response_1 = ReadyService.confirm_and_brew("balloons")
+      maker_bot_response_2 = ReadyService.confirm_and_brew(1234)
+      maker_bot_response_3 = ReadyService.confirm_and_brew("Robert'); DROP TABLE Makes;--")
 
-      expect(maker_bot_response_1).to have_value("Not sure what you meant by that.")
-      expect(maker_bot_response_2).to have_value("Not sure what you meant by that.")
-      expect(maker_bot_response_3).to have_value("Not sure what you meant by that.")
+      expect(maker_bot_response_1[:text]).to eq("Sorry, I'm not sure what you meant by that.")
+      expect(maker_bot_response_2[:text]).to eq("Sorry, I'm not sure what you meant by that.")
+      expect(maker_bot_response_3[:text]).to eq("Sorry, I'm not sure what you meant by that.")
     end
 
-    xscenario "it returns an error if not given anything to brew", :vcr do
-      maker_bot_response_1 = NewMakeService.start_making_a_drink("")
+    scenario "it returns an error if not given anything to brew", :vcr do
+      maker_bot_response_1 = ReadyService.confirm_and_brew("")
 
-      expect(maker_bot_response_1).to have_value("Not sure what you meant by that.")
+      expect(maker_bot_response_1[:text]).to eq("Sorry, I'm not sure what you meant by that.")
     end
   end
 end
