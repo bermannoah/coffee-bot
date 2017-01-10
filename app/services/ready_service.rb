@@ -12,9 +12,7 @@ module ReadyService
       what_did_you_mean
     end
   end
-  
-  private
-    
+      
   def self.brew_coffee(incoming_request)
     if incoming_request[1] == "ready"
       MakeService.start_making_a_drink(incoming_request[0])
