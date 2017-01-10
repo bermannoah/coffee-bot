@@ -20,7 +20,7 @@ module ReadyService
   
   def self.brew_coffee(incoming_request)
     if incoming_request[1] == "ready"
-      NewMakeService.start_making_a_drink(incoming_request[0])
+      MakeService.start_making_a_drink(incoming_request[0])
     else
       {
         text: "Sorry, is the coffee pot ready to go?\nPlease make sure there are grounds in the basket and the coffee pot is ready, then try again."

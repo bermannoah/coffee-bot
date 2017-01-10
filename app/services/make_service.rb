@@ -1,4 +1,4 @@
-module NewMakeService
+module MakeService
   
   def self.start_making_a_drink(type)
     send_make_request(type)
