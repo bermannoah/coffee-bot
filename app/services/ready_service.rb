@@ -1,10 +1,11 @@
 module ReadyService
   
   def self.confirm_and_brew(brew_data)
-    incoming_request = brew_data["text"].to_s.split
+    incoming_request = brew_data[:text].to_s.split
     if incoming_request[0] == "coffee"
       response = brew_coffee(incoming_request)
       make_brew_creation(brew_data)
+      response
     elsif incoming_request[0] == "tea" || incoming_request[0] == "water"
       unable_to_brew
     else
@@ -25,8 +26,7 @@ module ReadyService
   end
   
   def self.make_brew_creation(brew_data)
-    brew_hash = { "text" => brew_data["make"] }
-    Brew.create_new_brew_from_make(brew_hash)
+    Brew.create_new_brew_from_make(brew_data)
   end
   
   def self.unable_to_brew

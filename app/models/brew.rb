@@ -25,11 +25,11 @@ class Brew < ApplicationRecord
   end
   
   def self.create_new_brew_from_make(data)
-    location = data["team_domain"]
-    team = find_team(data["text"])
+    parsed_data = data.stringify_keys
+    team = find_team(parsed_data)
     brew = team.brews.create!(
-        user_name: data["user_name"],
-        location: location,
+        user_name: parsed_data["user_name"],
+        location: parsed_data["team_domain"],
         description: "Made by Coffee Maker Bot!"
     )
     brew.make_brewed_coffee_response(brew)
