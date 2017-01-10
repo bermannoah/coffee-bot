@@ -7,7 +7,7 @@ module NewMakeService
   private
   
   def self.conn
-    Faraday.new(:url => "http://localhost:8080") do |faraday|
+    Faraday.new(:url => "http://10.1.1.102:8080") do |faraday|
       faraday.request :url_encoded
       faraday.adapter Faraday.default_adapter
     end

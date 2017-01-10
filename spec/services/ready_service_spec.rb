@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe NewMakeService, type: :service do
-  context "with a server on localhost" do
-    xscenario "it POSTs a new make", :vcr do
-      make_type = "coffee"
-      maker_bot_response = NewMakeService.start_making_a_drink(make_type)
+describe ReadyService, type: :service do
+  context "with a server on the pi" do
+    scenario "it POSTs a new make if it is told that things are ready", :vcr do
+      text = "coffee ready"
+      maker_bot_response = ReadyService.confirm_and_brew(text)
 
       expect(maker_bot_response).to be_a(Hash)
       expect(maker_bot_response).to have_key("message")
