@@ -1,4 +1,4 @@
-# 418-Bot (though it mainly goes by Coffee-Bot)
+# Coffee-Bot
 
 ## I'm a coffee-pot slack-bot. 
 
