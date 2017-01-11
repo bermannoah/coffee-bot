@@ -5,7 +5,7 @@ module MakeService
   end
     
   def self.conn
-    Faraday.new(:url => "http://10.1.1.102:8080") do |faraday|
+    Faraday.new(:url => "#{ENV['COFFEE_MAKER_BOT_IP']}:8080") do |faraday|
       faraday.request :url_encoded
       faraday.adapter Faraday.default_adapter
     end
