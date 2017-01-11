@@ -22,7 +22,7 @@ handled by a Slack oauth setup leveraging [Figaro](https://github.com/laserlemon
 View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework. The site is hosted on a
 [Digital Ocean](https://www.digitalocean.com/) droplet with a HTTPS certificate provided by the extremely great [Let's Encrypt](https://letsencrypt.org/).
 
-[![Code Climate](https://codeclimate.com/github/bermannoah/418-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/418-bot)
+[![Code Climate](https://codeclimate.com/github/bermannoah/418-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/418-bot) [![security](https://hakiri.io/github/bermannoah/418-bot/master.svg)](https://hakiri.io/github/bermannoah/418-bot/master)
 
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/repo-images/blob/master/cb_basics.gif)
