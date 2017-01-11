@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :null_session
+  protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
   
   def current_user
@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    current_user
+    if current_user.nil?
+      render file: "/public/404", status: 404, layout: false
+    else
+      current_user
+    end
   end
 
 end

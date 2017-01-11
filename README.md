@@ -36,8 +36,10 @@ View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framewo
 ### Logged in, viewing list of brews
 ![view of the list of brews while logged in](https://github.com/bermannoah/repo-images/blob/master/cb_list_of_brews.jpg)
 
-### TODO: 
- - complete test suite!
- - make coffee bot actually be able to make coffee!
+### In progress:
+ - test suite revamp
+ - make it possible for coffee bot to brew (more or less) a pot of coffee!
+
+### Coming soon: 
  - tenant admin system for custom How-To pages and the #out of coffee function
  - interactive button options on slack commands

@@ -24,6 +24,17 @@ class Brew < ApplicationRecord
     brew.brewed_coffee_response(params)
   end
   
+  def self.create_new_brew_from_make(data)
+    parsed_data = data.stringify_keys
+    team = find_team(parsed_data)
+    brew = team.brews.create!(
+        user_name: parsed_data["user_name"],
+        location: parsed_data["team_domain"],
+        description: "Made by Coffee Maker Bot!"
+    )
+    brew.make_brewed_coffee_response(brew)
+  end
+  
   def brewed_coffee_response(params)
     time = created_at.strftime("%I:%M:%S %p")
     {
@@ -33,6 +44,13 @@ class Brew < ApplicationRecord
           "text": "#{description}"
               }
             ]
+    }
+  end
+  
+  def make_brewed_coffee_response(brew)
+    time = created_at.strftime("%I:%M:%S %p")
+    {
+      "text": "Starting to brew coffee!"
     }
   end
   
