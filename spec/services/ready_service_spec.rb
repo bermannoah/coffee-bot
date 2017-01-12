@@ -20,6 +20,25 @@ describe ReadyService, type: :service do
       expect(maker_bot_response["text"]).to be_a(String)
       expect(maker_bot_response["text"]).to eq("Starting to brew coffee!")
     end
+
+    scenario "it returns a ready check if it is not told that things are ready", :vcr do
+      text = "coffee ready"
+      team = Fabricate(:team)
+      user = Fabricate(:slack_login_user, team_id: team.id)
+      data = { 
+              team_id: team.id, 
+              team_domain: team.team_name,
+              user_id: user.id,
+              user_name: user.username,
+              command: "/make",
+              text: "coffee"
+             }
+     
+      maker_bot_response = ReadyService.confirm_and_brew(data)
+
+      expect(maker_bot_response[:text]).to be_a(String)
+      expect(maker_bot_response[:text]).to eq("Sorry, is the coffee pot ready to go?\nPlease make sure there are grounds in the basket and the coffee pot is ready, then try again.")
+    end
     
     scenario "it gets the right response for different kinds of drinks", :vcr do
       team = Fabricate(:team)
