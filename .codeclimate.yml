@@ -3,7 +3,6 @@ engines:
   brakeman:
     enabled: true
     exclude_fingerprints:
-      - 9e450b4277235e592c083dc95e4902a07537932fa4f1bfb631d7b2438066564d
   bundler-audit:
     enabled: true
   csslint:
@@ -24,6 +23,7 @@ engines:
       - php
     exclude_fingerprints:
       - f8e67af4417734ae7648d08baac41965
+      - f8677aa865989e38dde1d50bbcd0f228
   eslint:
     enabled: true
     exclude_fingerprints:
@@ -38,6 +38,7 @@ engines:
     - dde1d5af6087a6c76a8d80e84eb82e07
     - 9f8b5e6463b88d2db01e92a459055f99
     - 470047cc9dd16445f5293f41cc75f6bf
+    - 0db3b4d965c505867c741e26b569042a
 ratings:
   paths:
   - Gemfile.lock

@@ -98,7 +98,7 @@ class Brew < ApplicationRecord
       "text": "Hey #{params["user_name"]} thanks for being so conscientious!",
       "attachments": [
         {
-          "text":"...but this feature is still in development."
+          "text": "...but this feature is still in development."
               }
             ]
     }
