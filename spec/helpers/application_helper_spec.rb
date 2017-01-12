@@ -10,6 +10,10 @@ describe ApplicationHelper do
   
   context "if current user is nil" do
     it "returns false" do
+      brew = Fabricate(:brew)
+      @most_recent_brew = brew
+      session[:user_id] == nil
+      
       expect(helper.show_coffee_on_index_page?).to be false
     end
   end
@@ -26,5 +30,4 @@ describe ApplicationHelper do
       expect(helper.show_coffee_on_index_page?).to be false
     end
   end
-  
 end

@@ -17,7 +17,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Bot418
+module CoffeeBot
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -28,5 +28,6 @@ module Bot418
     # Skip views, helpers and assets when generating a new resource.
     config.time_zone = 'Mountain Time (US & Canada)'
     config.active_record.default_timezone = :local
+    config.skylight.environments += ['development']
   end
 end
