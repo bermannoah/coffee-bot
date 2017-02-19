@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
   end
 
  def create
-   if user == SlackService.authenticate(params)
+   user = SlackService.authenticate(params)
+   if user
      session[:user_id] = user.id
      redirect_to root_path, flash: { success: "Signed in successfully." }
    else
