@@ -16,7 +16,7 @@ You can also set up tooltips for the commands. I'd recommend using some variatio
 After this, everything should be running smoothly. Test it out by submitting a brew with `/coffee_brewing`.  Feel free to email me - noah at noahberman dot org - if you run into any trouble.
 
 ### Technical details
-[![Code Climate](https://codeclimate.com/github/bermannoah/coffee-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/coffee-bot) [![Test Coverage](https://codeclimate.com/github/bermannoah/coffee-bot/badges/coverage.svg)](https://codeclimate.com/github/bermannoah/coffee-bot/coverage) [![security](https://hakiri.io/github/bermannoah/coffee-bot/master.svg)](https://hakiri.io/github/bermannoah/coffee-bot/master)
+[![Code Climate](https://codeclimate.com/github/bermannoah/coffee-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/coffee-bot) [![Test Coverage](https://codeclimate.com/github/bermannoah/coffee-bot/badges/coverage.svg)](https://codeclimate.com/github/bermannoah/coffee-bot/coverage)
 
 Rails endpoints that interact with Slack slash commands and store data using PostgreSQL. Login on view pages
 handled by a Slack oauth setup leveraging [Figaro](https://github.com/laserlemon/figaro) and [Faraday](https://github.com/lostisland/faraday). Multi-tenancy provided by [Apartment](https://github.com/influitive/apartment).
