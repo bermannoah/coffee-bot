@@ -20,9 +20,9 @@ After this, everything should be running smoothly. Test it out by submitting a b
 
 Rails endpoints that interact with Slack slash commands and store data using PostgreSQL. Login on view pages
 handled by a Slack oauth setup leveraging [Figaro](https://github.com/laserlemon/figaro) and [Faraday](https://github.com/lostisland/faraday). Multi-tenancy provided by [Apartment](https://github.com/influitive/apartment).
-View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework. The site is hosted on a
-[Digital Ocean](https://www.digitalocean.com/) droplet with a HTTPS certificate provided by the extremely great [Let's Encrypt](https://letsencrypt.org/).
+View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework. The site is hosted on AWS EC2 with a HTTPS certificate provided by the extremely great [Let's Encrypt](https://letsencrypt.org/).
 
+(If you're here for Coffee-Maker-Bot, click [here](https://github.com/bermannoah/coffee-maker-bot).)
 
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/repo-images/blob/master/cb_basics.gif)
