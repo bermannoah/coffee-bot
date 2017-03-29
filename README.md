@@ -3,7 +3,7 @@
 ## I'm a coffee-pot slack-bot. 
 
 ## How to use the Coffee-Bot
-All you should need to do is go to the [site](https://coffeebot.coffee) and login via Slack. If your team is already using Coffee-Bot, then that should be it. If not, you will likely need to to add the app to your Team as part of the login process. You (or an admin) will also need to add two slash commands:
+All you should need to do is go to the [site](https://coffeebot.coffee) and login via Slack. If your team is already using Coffee-Bot, then that should be it. If not, you will likely need to to add the app to your Team as part of the login process. You (or an admin) will also need to add two slash command integrations:
 
 `/coffee_brewing` - a POST request to https://coffeebot.coffee/api/v1/coffee_brewing
 
@@ -24,6 +24,8 @@ handled by a Slack oauth setup leveraging [Figaro](https://github.com/laserlemon
 View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework. The site is hosted on AWS EC2 with a HTTPS certificate provided by the extremely great [Let's Encrypt](https://letsencrypt.org/).
 
 (If you're here for Coffee-Maker-Bot, click [here](https://github.com/bermannoah/coffee-maker-bot).)
+
+[![security](https://hakiri.io/github/bermannoah/418-bot/development.svg)](https://hakiri.io/github/bermannoah/418-bot/development)
 
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/repo-images/blob/master/cb_basics.gif)
