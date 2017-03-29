@@ -17,6 +17,7 @@ After this, everything should be running smoothly. Test it out by submitting a b
 
 ### Technical details
 [![Code Climate](https://codeclimate.com/github/bermannoah/coffee-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/coffee-bot) [![Test Coverage](https://codeclimate.com/github/bermannoah/coffee-bot/badges/coverage.svg)](https://codeclimate.com/github/bermannoah/coffee-bot/coverage)
+[![Dependency Status](https://gemnasium.com/badges/github.com/bermannoah/coffee-bot.svg)](https://gemnasium.com/github.com/bermannoah/coffee-bot)
 
 Rails endpoints that interact with Slack slash commands and store data using PostgreSQL. Login on view pages
 handled by a Slack oauth setup leveraging [Figaro](https://github.com/laserlemon/figaro) and [Faraday](https://github.com/lostisland/faraday). Multi-tenancy provided by [Apartment](https://github.com/influitive/apartment).
