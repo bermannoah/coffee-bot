@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
    redirect_to SlackService.sign_in_uri
   end
@@ -18,5 +18,5 @@ class SessionsController < ApplicationController
    session.clear
    redirect_to root_path, flash: { success: "Signed out successfully." }
  end
- 
+
 end
