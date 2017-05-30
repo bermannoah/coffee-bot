@@ -15,18 +15,14 @@
   margin: 100px;
 }
 
-.main-page-table {
-  border: 1px solid black;
-}
-
 .main-element-distancer {
   margin: 10px;
 }
 
-.link-decoration {
-  text-decoration: none;
+.command-column-table {
+  max-width: 50%;
 }
 
-.command-column {
-  width: 18rem;
+.link-decoration {
+  text-decoration: none;
 }

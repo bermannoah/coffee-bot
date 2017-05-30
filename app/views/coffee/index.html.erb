@@ -19,7 +19,7 @@
   </div>
   <p>
    <span class="main-element-distancer"> List of Coffee-Bot commands:</span>
-    <table class="col-7 centered table table-striped table-hover main-page-table">
+    <table class="col-7 centered table table-striped table-hover command-column-table">
       <thead>
           <tr>
               <th class="command-column">command</th>
@@ -29,22 +29,12 @@
       </thead>
       <tbody>
           <tr>
-              <td class="command-column">/coffee_brewing</td>
+              <td>/coffee_brewing</td>
               <td>creates a record of coffee being brewed (default location is your Slack team name)</td>
               <td>You can also use '/coffee_brewing BlueAnt' to add a custom location (in this case, BlueAnt) and/or '/coffee_brewing BlueAnt Get ready - it's delicious!' to add a description.</td>
           </tr>
           <tr>
-              <td class="command-column">/coffee_brewing #how</td>
-              <td>returns a quick guide to brewing a great pot of coffee</td>
-	      <td>More soon!</td>
-          </tr>
-          <tr>
-              <td class="command-column">/coffee_brewing #out</td>
-              <td>returns instructions for what to do when you're out of coffee</td>
-              <td>More soon!</td>
-          </tr>
-          <tr>
-              <td class="command-column">/last_brewed</td>
+              <td>/last_brewed</td>
               <td>returns the last location and time coffee was brewed</td>
               <td>You can use /last_brewed followed by a number to retrieve more brew records (useful if the last brew wasn't at your location!).</td>
           </tr>
@@ -54,22 +44,22 @@
   
   <p>
 	<span class="main-element-distancer">If you're installing this for the first time, you'll need these slack slash commands:</span>
-	<table class="col-6 centered table table-striped table-hover main-page-table">
+	<table class="col-7 centered table table-striped table-hover command-column-table">
 		<thead>
 			<tr>
-				<th class="command-column">slash command</th>
+				<th>slash command</th>
 				<th>request type</th>
 				<th>request url</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td class="command-column">/coffee_brewing</td>
+				<td>/coffee_brewing</td>
 				<td>POST</td>
 				<td>https://coffeebot.coffee/api/v1/coffee_brewing</td>
 			</tr>
 			<tr>
-				<td class="command-column">/last_brewed</td>
+				<td>/last_brewed</td>
 				<td>GET</td>
 				<td>https://coffeebot.coffee/api/v1/coffee_brewing</td>
 			</tr>
