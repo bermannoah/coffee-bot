@@ -12,7 +12,7 @@ describe "Existing user visits how to brew page" do
         
       expect(page).to have_content("How to brew a delicious pot of coffee!")
       expect(page).to have_content("Let everyone know there's a new pot with /coffee_brewing! :)")
-      expect(page).to have_content("For more specific advice or for different methods, Coffee-Bot recommends this Blue Bottle guide.")
+      expect(page).to have_content("For more specific advice or for different methods, CoffeeBot recommends this Blue Bottle guide.")
     end
   end
 end

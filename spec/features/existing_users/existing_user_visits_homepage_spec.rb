@@ -5,9 +5,8 @@ describe "Existing user visits home page" do
     scenario "they see the same content as a guest" do
       visit root_path
       
-      expect(page).to have_content("List of Coffee-Bot commands:")
+      expect(page).to have_content("List of CoffeeBot commands:")
       expect(page).to have_content("/coffee_brewing")
-      expect(page).to have_content("/coffee_brewing #how")
       expect(page).to have_content("/last_brewed")
       expect(page).to have_content("If you're installing this for the first time")
       expect(page).to have_content("Coffee Information")
@@ -23,8 +22,8 @@ describe "Existing user visits home page" do
       
       visit root_path
       
-      expect(page).to have_content("List of Coffee-Bot commands:")
-      expect(page).to have_content("Most recent coffee brew:")
+      expect(page).to have_content("List of CoffeeBot commands:")
+      expect(page).to have_content("Coffee was most recently brewed in")
       expect(page).to have_content("#{brew.location}")
     end
 
@@ -35,7 +34,7 @@ describe "Existing user visits home page" do
       
       visit root_path
       
-      expect(page).to have_content("List of Coffee-Bot commands:")
+      expect(page).to have_content("List of CoffeeBot commands:")
       expect(page).to have_content("No coffee has been brewed yet. Use the commands below to start logging brews!")
     end
 

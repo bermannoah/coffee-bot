@@ -121,7 +121,7 @@ class Brew < ApplicationRecord
   
   def self.index_brew_display(current_user)
     if current_user && retrieve_recent_brew(current_user)
-      return "Coffee was most recenrtly brewed in #{@recent_brew.location} #{ApplicationController.helpers.time_ago_in_words(@recent_brew.created_at)} ago."
+      return "Coffee was most recently brewed in #{@recent_brew.location} #{ApplicationController.helpers.time_ago_in_words(@recent_brew.created_at)} ago."
     elsif current_user && !retrieve_recent_brew(current_user)
       return "No coffee has been brewed yet. Use the commands below to start logging brews!"
     end

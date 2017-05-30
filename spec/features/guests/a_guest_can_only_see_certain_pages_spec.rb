@@ -5,9 +5,8 @@ describe "A guest user visits the site" do
     scenario "they see how-to info about the app" do
       visit root_path
       
-      expect(page).to have_content("List of Coffee-Bot commands:")
+      expect(page).to have_content("List of CoffeeBot commands:")
       expect(page).to have_content("/coffee_brewing")
-      expect(page).to have_content("/coffee_brewing #how")
       expect(page).to have_content("/last_brewed")
       expect(page).to have_content("If you're installing this for the first time")
       expect(page).to have_content("Coffee Information")
@@ -50,7 +49,7 @@ describe "A guest user visits the site" do
       visit root_path
       
       expect(page).to have_http_status(200)
-      expect(page).to have_content("Welcome to ☕️ Coffee-Bot!")
+      expect(page).to have_content("Welcome to ☕️ CoffeeBot!")
       expect(page).to_not have_content("Most recent coffee brew:")
     end
   end
