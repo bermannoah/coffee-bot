@@ -35,7 +35,6 @@ group :development, :test do
   gem 'foreman'
   gem 'pry-rails'
   gem 'faker'
-  gem "skylight"
 end
 
 group :development do
