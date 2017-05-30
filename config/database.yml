@@ -6,7 +6,7 @@ default: &default
 
 development:
   <<: *default
-  database: db/bot-418_development
+  database: db/coffee-bot_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,6 +17,6 @@ test:
 
 production:
   <<: *default
-  database: db/bot-418_production
+  database: db/coffee-bot_production
   username: rails
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
