@@ -1,5 +1,5 @@
 class Brew < ApplicationRecord
-  
+  include ActionView::Helpers::DateHelper
   belongs_to :team
 
   def self.handle_request(params)
@@ -58,8 +58,9 @@ class Brew < ApplicationRecord
     list = ''
       team = Team.find_by(team_slack_id: params["team_id"])
       team.brews.order(created_at: :desc).limit(limit).each do |brew|
-      	time = brew.created_at.strftime("%I:%M:%S %p")
-      	list << "Coffee was brewed in #{brew.location} at #{time}. | #{brew.description}\n"
+      	time = ApplicationController.helpers.time_ago_in_words(brew.created_at)
+      	list << "Coffee was brewed in #{brew.location} #{time} ago.\n" 
+        list << "#{brew.user_name} left a comment: #{brew.description}\n" if brew.description != "" 
       end
     {
       "text": "Last coffee brew(s):",

@@ -14,7 +14,7 @@
       <tr>
         <td>☕️ &nbsp;<%= brew.user_name %></td>
         <td><%= brew.location %></td>
-        <td><%= brew.created_at.strftime("%b %e, %l:%M %p") %></td>
+        <td><%= time_ago_in_words(brew.created_at) %> ago</td>
       </tr>
       <% end %>
   </tbody>

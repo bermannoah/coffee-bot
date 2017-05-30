@@ -22,7 +22,7 @@ describe "coffee_brewing endpoint GET requests" do
 
       expect(response).to be_success
       expect(brew["text"]).to eq("Last coffee brew(s):")
-      expect(brew["attachments"][0]["text"]).to include("Coffee was brewed in Home at")
+      expect(brew["attachments"][0]["text"]).to include("Coffee was brewed in Home less than a minute ago")
       expect(brew["attachments"][0]["text"]).to include("delicious!")
     end
     
@@ -74,7 +74,7 @@ describe "coffee_brewing endpoint GET requests" do
 
       expect(response).to be_success
       expect(brews["text"]).to eq("Last coffee brew(s):")
-      expect(brews["attachments"][0]["text"]).to include("Coffee was brewed in The Moon at")
+      expect(brews["attachments"][0]["text"]).to include("Coffee was brewed in The Moon ")
       expect(brews["attachments"][0]["text"]).to include("made me feel weightless!")
       expect(brews["attachments"][0]["text"]).to include("delicious!")
       expect(brews["attachments"][0]["text"]).to include("Turing")
@@ -132,7 +132,7 @@ describe "coffee_brewing endpoint GET requests" do
 
       expect(response).to be_success
       expect(brews["text"]).to eq("Last coffee brew(s):")
-      expect(brews["attachments"][0]["text"]).to include("Coffee was brewed in The Moon at")
+      expect(brews["attachments"][0]["text"]).to include("Coffee was brewed in The Moon ")
       expect(brews["attachments"][0]["text"]).to include("made me feel weightless!")
       expect(brews["attachments"][0]["text"]).to include("delicious!")
       expect(brews["attachments"][0]["text"]).to include("Turing")
