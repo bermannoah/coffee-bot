@@ -8,7 +8,7 @@
 }
 
 .brews-table {
-  border: 1px solid black;
+  max-width: 50%;
 }
 
 .table_element {
