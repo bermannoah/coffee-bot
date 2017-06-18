@@ -1,0 +1,14 @@
+<div class="text-center">
+  <h2>Add a webhook for when a brew is started</h2>
+  <p>You'll need to generate an Incoming Slack Webhook from your Slack team manage page.</p>
+  <p>This feature is mostly in beta so it might change under your feet. Keep an eye on this page.</p>
+  <br>
+  <br>
+  <%= form_for team_customization_path do |f| %>
+    <%= f.label :slack_webhook %>
+    <%= f.text_field :slack_webhook %>
+    
+    <%= f.submit "create" %>
+  <% end %>
+  
+</div>

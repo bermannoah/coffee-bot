@@ -4,7 +4,7 @@
 
 
   <% if current_user.nil? %>
-    <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.team&client_id=107333465906.108008566694"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
+    <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.team&client_id=2329094327.104681505318"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a>
   <% else %>
     <%= link_to "Logout", logout_path, method: :destroy, class: "btn main-element-distancer" %>
   <% end %>
@@ -68,10 +68,13 @@
 	</table>
    </p>
 
-
-
   <p>
+    
     Any questions? Email <a href="mailto:noah@noahberman.org">noah at noahberman dot org</a>! hope you enjoy :)
   </p>
+  <br/>
+  <% if current_user %>
+    <a href="/team_customization">Modify Team</a>
+  <% end %>
 
 </div>

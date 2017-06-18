@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   get '/coffee_info', to: 'coffee#info'
   get '/list_of_brews', to: 'coffee#show'
   get '/how_to_brew', to: 'coffee#how'
-
-
+  get '/team_customization', to: 'team#edit'
+  
 end
