@@ -1,6 +1,6 @@
 module WebhookService
   
-  def coffee_is_brewing(params,webhook_url)
+  def self.coffee_is_brewing(params,webhook_url)
     conn = Faraday.new(:url => webhook_url)
     body_text = {text:"#{params["user_name"]} has just started brewing coffee!"}
     conn.post do |req|
