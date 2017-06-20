@@ -4,6 +4,8 @@
   <p>This feature is mostly in beta so it might change under your feet. Keep an eye on this page.</p>
   <br>
   <br>
+  <p>Current webhook:</p>
+  <p><%= @current_webhook %></p>
   <%= form_for team_customization_path do |f| %>
     <%= f.label :slack_webhook %>
     <%= f.text_field :slack_webhook %>

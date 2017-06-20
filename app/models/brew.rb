@@ -13,9 +13,12 @@ class Brew < ApplicationRecord
   end
 
   def self.create_new_brew(params)
+    team = find_team(params)
+    if team.webhook_url?
+      send_webhook_alert(time,params,team.webhook_url)
+    end
     text = params["text"].split(' ')
     location = text.shift || params["team_domain"]
-    team = find_team(params)
     brew = team.brews.create!(
         user_name: params["user_name"],
         location: location,
@@ -133,6 +136,10 @@ class Brew < ApplicationRecord
     else  
       @recent_brew = where(team_id: current_user.team_id).last
     end
+  end
+  
+  def self.send_webhook_alert(params,time,webhook_url)
+    WebhookService.coffee_is_brewing(time,params,webhook_url)
   end
   
 end
