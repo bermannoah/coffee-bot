@@ -137,8 +137,8 @@ class Brew < ApplicationRecord
     end
   end
   
-  def self.send_webhook_alert(params,time,webhook_url)
-    WebhookService.coffee_is_brewing(time,params,webhook_url)
+  def self.send_webhook_alert(params,webhook_url)
+    WebhookService.coffee_is_brewing(params,webhook_url)
   end
   
 end
