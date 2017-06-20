@@ -15,7 +15,7 @@ class Brew < ApplicationRecord
   def self.create_new_brew(params)
     team = find_team(params)
     if team.webhook_url?
-      send_webhook_alert(time,params,team.webhook_url)
+      send_webhook_alert(params,team.webhook_url)
     end
     text = params["text"].split(' ')
     location = text.shift || params["team_domain"]
@@ -39,7 +39,6 @@ class Brew < ApplicationRecord
   end
   
   def brewed_coffee_response(params)
-    time = created_at.strftime("%I:%M:%S %p")
     {
       "text": "Hey #{user_name} thanks for brewing coffee! You're a hero!",
       "attachments": [
