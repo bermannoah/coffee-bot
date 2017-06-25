@@ -23,7 +23,7 @@ class Brew < ApplicationRecord
     )
     brew.brewed_coffee_response(params)
     if team.webhook_url?
-      send_webhook_alert(brew)
+      send_webhook_alert(team.webhook_url,brew)
     end
   end
   
@@ -137,8 +137,8 @@ class Brew < ApplicationRecord
     end
   end
   
-  def self.send_webhook_alert(brew)
-    WebhookService.coffee_is_brewing(brew)
+  def self.send_webhook_alert(webhook_url,brew)
+    WebhookService.coffee_is_brewing(webhook_url,brew)
   end
   
 end
