@@ -21,10 +21,10 @@ class Brew < ApplicationRecord
         location: location,
         description: text.join(' ')
     )
-    brew.brewed_coffee_response(params)
     if team.webhook_url?
       send_webhook_alert(team.webhook_url,brew)
     end
+    brew.brewed_coffee_response(params)
   end
   
   def self.create_new_brew_from_make(data)
