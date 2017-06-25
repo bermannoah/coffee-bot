@@ -3,7 +3,7 @@ module WebhookService
   def self.coffee_is_brewing(webhook_url,brew)
     conn = Faraday.new(:url => webhook_url)
     if brew.description
-      body_text = message_to_send_with_comment(brew).to_h
+      body_text = message_to_send_with_comment(brew).to_s
     else 
       body_text = {text:"#{brew.user_name} has just started brewing coffee!"}
     end
