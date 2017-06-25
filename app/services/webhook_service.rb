@@ -3,14 +3,14 @@ module WebhookService
   def self.coffee_is_brewing(webhook_url,brew)
     conn = Faraday.new(:url => webhook_url)
     if brew.description
-      body_text = message_to_send_with_comment(brew)
+      body_text = message_to_send_with_comment(brew).to_h
     else 
-      body_text = {text:"#{brew.user_name} has just started brewing coffee!"}.to_json
+      body_text = {text:"#{brew.user_name} has just started brewing coffee!"}
     end
     conn.post do |req|
       req.url webhook_url
       req.headers['Content-Type'] = 'application/json'
-      req.body = body_text
+      req.body = body_text.to_json
     end
   end
   
