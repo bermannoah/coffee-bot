@@ -14,9 +14,6 @@ class Brew < ApplicationRecord
 
   def self.create_new_brew(params)
     team = find_team(params)
-    if team.webhook_url?
-      send_webhook_alert(params,team.webhook_url)
-    end
     text = params["text"].split(' ')
     location = text.shift || params["team_domain"]
     brew = team.brews.create!(
@@ -25,6 +22,9 @@ class Brew < ApplicationRecord
         description: text.join(' ')
     )
     brew.brewed_coffee_response(params)
+    if team.webhook_url?
+      send_webhook_alert(brew)
+    end
   end
   
   def self.create_new_brew_from_make(data)
@@ -62,7 +62,7 @@ class Brew < ApplicationRecord
       team.brews.order(created_at: :desc).limit(limit).each do |brew|
       	time = ApplicationController.helpers.time_ago_in_words(brew.created_at)
       	list << "Coffee was brewed in #{brew.location} #{time} ago.\n" 
-        list << "#{brew.user_name} left a comment: #{brew.description}\n" if brew.description != "" 
+        list << "#{brew.user_name} commented: #{brew.description}\n" if brew.description != "" 
       end
     {
       "text": "Last coffee brew(s):",
@@ -137,8 +137,8 @@ class Brew < ApplicationRecord
     end
   end
   
-  def self.send_webhook_alert(params,webhook_url)
-    WebhookService.coffee_is_brewing(params,webhook_url)
+  def self.send_webhook_alert(brew)
+    WebhookService.coffee_is_brewing(brew)
   end
   
 end
