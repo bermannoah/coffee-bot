@@ -23,8 +23,10 @@ class Brew < ApplicationRecord
     )
     if team.webhook_url?
       send_webhook_alert(team.webhook_url,brew)
+      brew.brewed_coffee_response(params)
+    else
+      brew.brewed_coffee_response(params)
     end
-    brew.brewed_coffee_response(params)
   end
   
   def self.create_new_brew_from_make(data)
