@@ -2,7 +2,9 @@ module WebhookService
   
   def self.coffee_is_brewing(webhook_url,params)
     conn = Faraday.new(:url => webhook_url)
-    puts params
+    puts params["user_name"]
+    puts params["location"]
+    puts params["description"]
     if params["description"] != "" 
       body_text = {text:"#{params["user_name"]} has just started brewing coffee in #{params["location"]}!",
                    attachments:"#{params["description"]}"}
