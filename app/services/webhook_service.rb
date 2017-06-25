@@ -18,13 +18,13 @@ module WebhookService
     {
     "attachments": [
         {
-            "fallback": "#{user_name} has started brewing coffee!",
-            "pretext": "#{user_name} has started brewing coffee!",
-            "text": "#{description}",
+            "fallback": "#{params["user_name"]} has started brewing coffee!",
+            "pretext": "#{params["user_name"]} has started brewing coffee!",
+            "text": "#{params["description"]}",
             "fields": [
                   {
                       "title": "Location",
-                      "value": "#{location}",
+                      "value": "#{params["location"]}",
                       "short": false
                   }
                 ],
