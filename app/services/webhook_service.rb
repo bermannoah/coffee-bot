@@ -29,8 +29,7 @@ module WebhookService
                   }
                 ],
               "footer": "CoffeeBot",
-              "footer_icon": "☕️",
-              "ts": 12321313
+              "footer_icon": "☕️"
           }
       ]
     }
