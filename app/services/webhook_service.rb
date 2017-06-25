@@ -1,11 +1,11 @@
 module WebhookService
   
-  def self.coffee_is_brewing(webhook_url,brew)
+  def self.coffee_is_brewing(webhook_url,params)
     conn = Faraday.new(:url => webhook_url)
-    if brew.description
-      body_text = message_to_send_with_comment(brew).to_s
+    if params["description"] != "" 
+      body_text = message_to_send_with_comment(params).to_s
     else 
-      body_text = {text:"#{brew.user_name} has just started brewing coffee!"}
+      body_text = {text:"#{user_name} has just started brewing coffee!"}
     end
     conn.post do |req|
       req.url webhook_url
@@ -14,17 +14,17 @@ module WebhookService
     end
   end
   
-  def self.message_to_send_with_comment(brew)
+  def self.message_to_send_with_comment(params)
     {
     "attachments": [
         {
-            "fallback": "#{brew.user_name} has started brewing coffee!",
-            "pretext": "#{brew.user_name} has started brewing coffee!",
-            "text": "#{brew.description}",
+            "fallback": "#{user_name} has started brewing coffee!",
+            "pretext": "#{user_name} has started brewing coffee!",
+            "text": "#{description}",
             "fields": [
                   {
                       "title": "Location",
-                      "value": brew.location,
+                      "value": "#{location}",
                       "short": false
                   }
                 ],
