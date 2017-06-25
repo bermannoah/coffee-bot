@@ -10,7 +10,7 @@ module WebhookService
     conn.post do |req|
       req.url webhook_url
       req.headers['Content-Type'] = 'application/json'
-      req.body = body_text.to_json
+      req.body = body_text
     end
   end
   
