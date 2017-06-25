@@ -14,7 +14,7 @@ module WebhookService
     end
   end
   
-  def message_to_send_with_comment(brew)
+  def self.message_to_send_with_comment(brew)
     {
     "attachments": [
         {
