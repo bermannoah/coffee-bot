@@ -1,6 +1,6 @@
 module WebhookService
   
-  def self.coffee_is_brewing(brew)
+  def self.coffee_is_brewing(webhook_url,brew)
     conn = Faraday.new(:url => webhook_url)
     if brew.description
       body_text = message_to_send_with_comment(brew)
@@ -14,26 +14,26 @@ module WebhookService
     end
   end
   
-  def message_to_send_with_comment(params,text)
+  def message_to_send_with_comment(brew)
     {
     "attachments": [
         {
-            "fallback": "#{user_name} has started brewing coffee!",
-            "pretext": "#{user_name} has started brewing coffee!",
-            "text": "#{text.join(' ')}",
+            "fallback": "#{brew.user_name} has started brewing coffee!",
+            "pretext": "#{brew.user_name} has started brewing coffee!",
+            "text": "#{brew.description}",
             "fields": [
-                {
-                    "title": "Location",
-                    "value": text.shift || params["team_domain"],
-                    "short": false
-                }
-            ],
-            "footer": "CoffeeBot",
-            "footer_icon": "☕️",
-            "ts": 12321313
-        }
-    ]
-}
+                  {
+                      "title": "Location",
+                      "value": brew.location,
+                      "short": false
+                  }
+                ],
+              "footer": "CoffeeBot",
+              "footer_icon": "☕️",
+              "ts": 12321313
+          }
+      ]
+    }
   end
   
 end
