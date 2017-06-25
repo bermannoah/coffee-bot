@@ -22,7 +22,6 @@ class Brew < ApplicationRecord
         description: text.join(' ')
     )
     if team.webhook_url?
-      puts params.body
       send_webhook_alert(team.webhook_url,params)
       brew.brewed_coffee_response(params)
     else
