@@ -5,7 +5,7 @@ module WebhookService
     text = params["text"].split(' ')
     location = text.shift || params["team_domain"]
     description = text.join(' ')
-    if description != ""
+    if !description.empty?
       body_text = {text:"#{params["user_name"]} has just started brewing coffee in #{location}!",
                    attachments:"#{params["description"]}"}
     else 
