@@ -29,10 +29,6 @@ gem 'apartment'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
-# Jawbs
-gem 'sidekiq' 
-gem 'redis', '~> 3.0'
-
 # Boot reallllll quick like
 gem 'bootsnap', require: false
 
