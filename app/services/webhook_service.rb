@@ -21,6 +21,8 @@ module WebhookService
       req.body = body_text.to_json
     end
     
-    WebhookReminderJob.set(wait: 30.seconds).perform_later(webhook_url)
+    # This will eventually be configurable. For now though, it 
+    # is set to match the creators brew time. There are perks, sometimes...
+    WebhookReminderJob.set(wait: 5.minutes).perform_later(webhook_url)
   end  
 end
