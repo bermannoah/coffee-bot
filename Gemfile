@@ -8,7 +8,7 @@ gem 'responders'
 gem 'figaro'
 gem 'faraday'
 # Use Puma as the app server
-# gem 'puma', '~> 3.0'
+gem 'puma'
 gem 'bundler'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
