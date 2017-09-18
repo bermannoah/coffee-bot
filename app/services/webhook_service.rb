@@ -21,6 +21,6 @@ module WebhookService
       req.body = body_text.to_json
     end
     
-    WebhookReminderJob.set(wait: 5.minutes).perform_later(webhook_url)  
+    WebhookBrewWorker.perform_in(5.minutes, webhook_url)
   end  
 end
