@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.2'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'unicorn'
 gem 'pg'
@@ -8,7 +8,7 @@ gem 'responders'
 gem 'figaro'
 gem 'faraday'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+# gem 'puma', '~> 3.0'
 gem 'bundler'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -55,5 +55,3 @@ group :test do
   gem 'vcr'
   gem "codeclimate-test-reporter", "~> 1.0.0"
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

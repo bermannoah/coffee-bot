@@ -1,3 +1,7 @@
+require 'faraday'
+require 'json'
+# Just in case
+
 module WebhookService
   
   def self.coffee_is_brewing(webhook_url,params)
@@ -16,5 +20,7 @@ module WebhookService
       req.headers['Content-Type'] = 'application/json'
       req.body = body_text.to_json
     end
+    
+    WebhookReminderJob.set(wait: 5.minutes).perform_later(webhook_url)  
   end  
 end
