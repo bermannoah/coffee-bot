@@ -6,6 +6,7 @@ before_install:
   - gem --version
 services:
   - postgresql
+  - redis
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - bundle exec sidekiq
