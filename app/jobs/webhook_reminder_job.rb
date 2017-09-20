@@ -3,7 +3,7 @@ class WebhookReminderJob < ApplicationJob
 
   def perform(webhook_url)
     conn = Faraday.new(:url => webhook_url)
-    update_text = {text:"The coffee is probably ready!"}
+    update_text = {text:"The coffee is ready!"}
     conn.post do |req|
       req.url webhook_url
       req.headers['Content-Type'] = 'application/json'
