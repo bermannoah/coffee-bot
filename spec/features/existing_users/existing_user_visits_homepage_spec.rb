@@ -7,9 +7,12 @@ describe "Existing user visits home page" do
       
       expect(page).to have_content("List of CoffeeBot commands:")
       expect(page).to have_content("/coffee_brewing")
+      expect(page).to have_content("/kettle_brewing")
+      expect(page).to have_content("and I'm making tea for everyone")
       expect(page).to have_content("/last_brewed")
       expect(page).to have_content("If you're installing this for the first time")
       expect(page).to have_content("Coffee Information")
+      expect(page).to have_content("Privacy policy: CoffeeBot pulls information from Slack's")
     end
   end
   
