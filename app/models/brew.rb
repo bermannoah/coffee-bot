@@ -3,10 +3,8 @@ class Brew < ApplicationRecord
   belongs_to :team
 
   def self.handle_request(params)
-    if params["text"].include?("#how")
-      Brew.how_to_brew(params)
-    elsif params["text"].include?("#out")
-      Brew.we_are_out_of_coffee(params)
+    if params["command"] == "/kettle_brewing"
+      Brew.create_new_kettle_brew(params)
     else
       Brew.create_new_brew(params)
     end
@@ -28,6 +26,23 @@ class Brew < ApplicationRecord
       brew.brewed_coffee_response(params)
     end
   end
+
+  def self.create_new_kettle_brew(params)
+    team = find_team(params)
+    text = params["text"].split(' ')
+    location = text.shift || params["team_domain"]
+    brew = team.brews.create!(
+        user_name: params["user_name"],
+        location: location,
+        description: text.join(' ')
+    )
+    if team.webhook_url?
+      send_kettle_webhook_alert(team.webhook_url,params)
+      brew.brewed_kettle_response(params)
+    else
+      brew.brewed_kettle_response(params)
+    end
+  end
   
   def self.create_new_brew_from_make(data)
     parsed_data = data.stringify_keys
@@ -42,12 +57,13 @@ class Brew < ApplicationRecord
   
   def brewed_coffee_response(params)
     {
-      "text": "Hey #{user_name} thanks for brewing coffee! You're a hero!",
-      "attachments": [
-        {
-          "text": "#{description}"
-              }
-            ]
+      "text": "Hey #{user_name} thanks for brewing coffee!",
+    }
+  end
+
+  def brewed_kettle_response(params)
+    {
+      "text": "Hey #{user_name} thanks for starting the kettle!",
     }
   end
   
@@ -76,39 +92,6 @@ class Brew < ApplicationRecord
     }
   end
   
-  def self.how_to_brew(params)
-    {
-      "text": "Hey #{params["user_name"]}  thanks for asking!",
-      "attachments": [
-        {
-          "text": 
-                 "These are pretty general instructions for brewing coffee.\n
-                  For specific methods - Blue Bottle has a cool guide:\n
-		  https://bluebottlecoffee.com/preparation-guides\n
-                  Here's how to brew coffee in a standard brewer:\n
-                  1. Make sure coffee pot and grounds basket are empty and rinsed out.\n
-                  2. Set grinder to medium (or one notch below).\n
-                  3. Grind beans and fill filter until it is just over half full.\n
-                  4. Clean whatever container your brewer brews into!\n
-                  5. Put filter into basket. Place basket into brewer.\n
-                  6. Press the start button (or equivalent).\n
-                  7. Let everyone know there's a new pot with /coffee_brewing! :)"
-              }
-            ]
-    }
-  end
-  
-  def self.we_are_out_of_coffee(params)
-    {
-      "text": "Hey #{params["user_name"]} thanks for being so conscientious!",
-      "attachments": [
-        {
-          "text": "...but this feature is still in development."
-              }
-            ]
-    }
-  end
-
   def self.get_limit(input)
     input.to_i != 0 ? input.to_i : 1
   end
@@ -141,6 +124,10 @@ class Brew < ApplicationRecord
   
   def self.send_webhook_alert(webhook_url,params)
     WebhookService.coffee_is_brewing(webhook_url,params)
+  end
+
+  def self.send_kettle_webhook_alert(webhook_url,params)
+    WebhookService.kettle_is_brewing(webhook_url,params)
   end
   
 end
