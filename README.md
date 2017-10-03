@@ -1,9 +1,13 @@
-# Coffee-Bot
+# coffeebot
 
 a coffee-pot slack-bot 
 
-## How to use the CoffeeBot
-All you should need to do is go to the [site](https://coffeebot.coffee) and login via Slack. If your team is already using CoffeeBot, then that should be it. If not, you will likely need to to add the app to your Team as part of the login process. You (or an admin) will also need to add two or three slash commands:
+[![Code Climate](https://codeclimate.com/github/bermannoah/coffee-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/coffee-bot) 
+[![Dependency Status](https://gemnasium.com/badges/github.com/bermannoah/coffee-bot.svg)](https://gemnasium.com/github.com/bermannoah/coffee-bot)
+[![Build Status](https://travis-ci.org/bermannoah/coffee-bot.svg?branch=master)](https://travis-ci.org/bermannoah/coffee-bot)
+
+## How to use coffeebot
+If you're not using coffeebot already you will need to to add the app to your Team. To do so you (or an admin) will also need to add two or three slash commands:
 
 `/coffee_brewing` - a POST request to https://coffeebot.coffee/api/v1/coffee_brewing
 
@@ -11,16 +15,11 @@ All you should need to do is go to the [site](https://coffeebot.coffee) and logi
 
 Optional: `/kettle_brewing` - a POST request to https://coffeebot.coffee/api/v1/kettle_brewing
 
-(All URLs are the same, though the request type is different.)
-
 You can also set up tooltips for the commands. I'd recommend using some variation of the descriptions on [the main site](https://coffeebot.coffee). Plus, you can give the command response 'bot' a name!
 
 After this, everything should be running smoothly. Test it out by submitting a brew with `/coffee_brewing`.  Feel free to email me - noah at noahberman dot org - if you run into any trouble.
 
 ### Technical details
-[![Code Climate](https://codeclimate.com/github/bermannoah/coffee-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/coffee-bot) 
-[![Dependency Status](https://gemnasium.com/badges/github.com/bermannoah/coffee-bot.svg)](https://gemnasium.com/github.com/bermannoah/coffee-bot)
-[![Build Status](https://travis-ci.org/bermannoah/coffee-bot.svg?branch=master)](https://travis-ci.org/bermannoah/coffee-bot)
 
 Rails endpoints that interact with Slack slash commands and store data using PostgreSQL. Login on view pages
 handled by a Slack oauth setup leveraging [Figaro](https://github.com/laserlemon/figaro) and [Faraday](https://github.com/lostisland/faraday). Multi-tenancy provided by [Apartment](https://github.com/influitive/apartment).
