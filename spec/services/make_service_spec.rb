@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe MakeService, type: :service do
+describe MakeService, pi_dependent: true, type: :service do
   context "with a server running" do
     scenario "it POSTs a new make", :vcr do
       make_type = "coffee"

@@ -18,6 +18,7 @@ config/application.yml
 
 # Ignore test-generated files
 coverage/*
+spec/cassettes/*
 
 # Ignore application configuration
 /config/application.yml

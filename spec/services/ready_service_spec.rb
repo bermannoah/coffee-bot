@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ReadyService, type: :service do
+describe ReadyService, pi_dependent: true, type: :service do
   context "with a server on the pi" do
     scenario "it POSTs a new make if it is told that things are ready", :vcr do
       text = "coffee ready"

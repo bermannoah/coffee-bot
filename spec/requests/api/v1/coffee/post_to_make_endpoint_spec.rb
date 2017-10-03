@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "make endpoint POST requests" do
+describe "make endpoint POST requests", pi_dependent: true do
   context "POST /api/v1/make" do
     it "it sends a request to an external server", :vcr do
       team = Fabricate(:team)
