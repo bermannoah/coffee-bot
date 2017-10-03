@@ -1,5 +1,8 @@
 .header {
   text-align: center;
+  font-weight: bold;
+  color: #000;
+  font-size: 2.5rem;
 }
 
 .list_of_brews {
@@ -25,4 +28,9 @@
 
 .link-decoration {
   text-decoration: none;
+}
+
+.coffee-bots-image {
+  text-align: center;
+  max-width: 30%;
 }

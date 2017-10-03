@@ -1,35 +1,48 @@
 <div class="text-center">
+<br>
+<br>
+<h2 class="header">coffeebot!</h2>  
+<%= image_tag "coffeebot.jpeg", alt: "Rupert and the coffeebots", class: "img-responsive, coffee-bots-image" %>
 
-<h2>Welcome to ☕️ CoffeeBot!</h2>
-
-
-  <% if current_user.nil? %>
-    <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.team&client_id=107333465906.108008566694"><img alt="Sign in with Slack" height="40" width="172" src="https://platform.slack-edge.com/img/sign_in_with_slack.png" srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x" /></a> 
-    <a href="https://slack.com/oauth/authorize?&client_id=107333465906.108008566694&scope=identity.basic,identity.team"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
-  <% else %>
-    <%= link_to "Logout", logout_path, method: :destroy, class: "btn main-element-distancer" %>
-  <% end %>
-
-  <% flash.each do |key, value| %>
-    <%= content_tag :div, value, class: "flash #{key}" %>
-  <% end %>
-  <div>
-    <% if current_user %>  
-    	<%= link_to "#{@display}", list_of_brews_path, class: "btn btn-lg main-element-distancer" %>
-    <% end %>
-  </div>
   <p>
   <br />
-   <span class="main-element-distancer"> List of CoffeeBot commands:</span>
-    <table class="col-7 centered table table-striped table-hover command-column-table">
-      <thead>
+  <h4 class="main-element-distancer">How to install and use coffeebot:</h4>
+  <br />
+  <span class="main-element-distancer">You'll need to create (or have someone create for you) a couple of slack slash commands:</span>
+  <table class="col-7 centered table table-striped table-hover command-column-table">
+    <thead>
+      <tr>
+        <th>slash command</th>
+        <th>request type</th>
+        <th>request url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>/coffee_brewing</td>
+        <td>POST</td>
+        <td>https://coffeebot.coffee/api/v1/coffee_brewing</td>
+      </tr>
+      <tr>
+        <td>/kettle_brewing</td>
+        <td>POST</td>
+        <td>https://coffeebot.coffee/api/v1/kettle_brewing</td>
+      </tr>
+      <tr>
+        <td>/last_brewed</td>
+        <td>GET</td>
+        <td>https://coffeebot.coffee/api/v1/coffee_brewing</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
           <tr>
               <th class="command-column">command</th>
               <th>result</th>
               <th>extra</th>
           </tr>
-      </thead>
-      <tbody>
           <tr>
               <td>/coffee_brewing</td>
               <td>creates a record of coffee being brewed (default location is your Slack team name)</td>
@@ -48,48 +61,11 @@
       </tbody>
   </table>
   </p>
-  <span class="main-element-distancer"></span>
-  
-  <p>
-	<span class="main-element-distancer">If you're installing this for the first time:</span>
-	<br />
-	<br />
-  <span class="main-element-distancer">You'll need to create (or have someone create for you) a couple of slack slash commands:</span>
-	<table class="col-7 centered table table-striped table-hover command-column-table">
-		<thead>
-			<tr>
-				<th>slash command</th>
-				<th>request type</th>
-				<th>request url</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>/coffee_brewing</td>
-				<td>POST</td>
-				<td>https://coffeebot.coffee/api/v1/coffee_brewing</td>
-			</tr>
-			<tr>
-				<td>/last_brewed</td>
-				<td>GET</td>
-				<td>https://coffeebot.coffee/api/v1/coffee_brewing</td>
-			</tr>
-		</tbody>
-	</table>
-   </p>
-   <br />
- 	 <br />
-
   <p>
     Any questions? Email <a href="mailto:noah@noahberman.org">noah at noahberman dot org</a>! hope you enjoy :)
   </p>
-  <br />
-  <br />
-  <p>Privacy policy: CoffeeBot pulls information from Slack's systems and we use minimal Google Analytics tracking to</p>
-  <p>monitor usage in aggregate. We do not collect any additional information, and do not serve advertising of any kind.</p>
-  <p>We capture Slack team identifiers and user identifiers to allow website login and to provide you various methods for accessing</p>
-  <p>your data. We do not and will not sell, transmit, or otherwise do anything with this information. If you have any questions</p>
-  <p>feel free to contact me at the email address above.</p>
+  <a href="/coffee_info">Privacy Policy</a>
   <br/>
-  
+  <br>
+  <br>
 </div>
