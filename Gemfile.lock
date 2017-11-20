@@ -239,7 +239,7 @@ GEM
       kgio (~> 2.6)
       raindrops (~> 0.7)
     vcr (3.0.3)
-    webmock (3.1.0)
+    webmock (3.1.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
