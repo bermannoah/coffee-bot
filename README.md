@@ -2,7 +2,6 @@
 
 a coffee-pot slack-bot 
 
-[![Code Climate](https://codeclimate.com/github/bermannoah/coffee-bot/badges/gpa.svg)](https://codeclimate.com/github/bermannoah/coffee-bot) 
 [![Dependency Status](https://gemnasium.com/badges/github.com/bermannoah/coffee-bot.svg)](https://gemnasium.com/github.com/bermannoah/coffee-bot)
 [![Build Status](https://travis-ci.org/bermannoah/coffee-bot.svg?branch=master)](https://travis-ci.org/bermannoah/coffee-bot)
 
@@ -38,6 +37,3 @@ View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framewo
 
 ### Logged in, viewing list of brews
 ![view of the list of brews while logged in](https://github.com/bermannoah/repo-images/blob/master/cb_list_of_brews.jpg)
-
-### Future goals: 
- - office admin system and increased customization 
