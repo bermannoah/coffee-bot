@@ -230,7 +230,7 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (3.2.0)
+    uglifier (4.0.1)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -238,7 +238,7 @@ GEM
     unicorn (5.3.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-    vcr (3.0.3)
+    vcr (4.0.0)
     webmock (3.1.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
