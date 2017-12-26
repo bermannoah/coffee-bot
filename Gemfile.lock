@@ -49,7 +49,7 @@ GEM
     bcrypt (3.1.11)
     bootsnap (1.1.7)
       msgpack (~> 1.0)
-    brakeman (4.1.0)
+    brakeman (4.1.1)
     builder (3.2.3)
     capybara (2.16.1)
       addressable
