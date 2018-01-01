@@ -12,10 +12,18 @@ describe "A guest user visits the site" do
       expect(page).to have_content("coffeebot!")
     end
 
-    scenario "they see coffee brewing info" do
-      visit coffee_info_path
-            
+    scenario "they visit the privacy page" do
+      visit privacy_path
+      
+      expect(page).to have_content("coffeebot!")
       expect(page).to have_content("Privacy Policy")
+    end
+
+    scenario "they visit the cookie policy page" do
+      visit cookies_path
+            
+      expect(page).to have_content("coffeebot!")
+      expect(page).to have_content("If we update this policy this page will update.")
     end
   end  
 end
