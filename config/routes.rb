@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   end
   
   root to: "coffee#index"
-  get  '/auth/slack/callback', to: 'sessions#create'
-  get '/logout',              to: 'sessions#destroy'
-  get  '/sign_in_with_slack',  to: 'sessions#new'
-
+  if Rails.env.test?
+    get  '/auth/slack/callback', to: 'sessions#create'
+    get '/logout',              to: 'sessions#destroy'
+    get  '/sign_in_with_slack',  to: 'sessions#new'
+  end
+  
   get '/cookies', to: 'coffee#cookies'
   get '/privacy', to: 'coffee#privacy'
 end
