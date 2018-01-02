@@ -8,15 +8,15 @@ class SessionsController < ApplicationController
    user = SlackService.authenticate(params)
    if user
      session[:user_id] = user.id
-     redirect_to root_path, flash: { success: "Signed in successfully." }
+     redirect_to root_path
    else
-     redirect_to root_path, flash: { warning: "Sign in unsuccessful. Please try again." }
+     redirect_to root_path
    end
  end
 
  def destroy
    session.clear
-   redirect_to root_path, flash: { success: "Signed out successfully." }
+   redirect_to root_path
  end
 
 end
