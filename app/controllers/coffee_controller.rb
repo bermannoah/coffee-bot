@@ -1,4 +1,6 @@
 class CoffeeController < ApplicationController
+  protect_from_forgery with: :exception
+
   def index
   end
   
@@ -7,4 +9,5 @@ class CoffeeController < ApplicationController
   
   def privacy
   end
+  
 end
