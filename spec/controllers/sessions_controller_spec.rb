@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe SessionsController, type: :controller do
+describe SessionsController, type: :controller do
   context "new" do
     scenario "it redirects to the right place" do
       get :new
