@@ -27,5 +27,6 @@ module CoffeeBot
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.active_record.default_timezone = :local
+    config.middleware.use ActionDispatch::Flash
   end
 end
