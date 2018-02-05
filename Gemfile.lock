@@ -273,7 +273,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen
-  pg
+  pg (~> 0.2)
   pry-rails
   puma
   rails
