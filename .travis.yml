@@ -5,11 +5,9 @@ before_install:
   - gem update --system
   - gem --version
   - gem install bundler
+cache: bundler
 services:
   - postgresql
-before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-
 jobs: 
   include: 
     
@@ -20,4 +18,6 @@ jobs:
       script: bundle exec brakeman -z
       
     - stage: tests
+      before_script:
+      - psql -c 'create database travis_ci_test;' -U postgres
       script: RAILS_ENV=test bundle exec rake --trace spec SPEC_OPTS="--tag ~pi_dependent:true"
