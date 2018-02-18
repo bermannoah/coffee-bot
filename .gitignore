@@ -22,3 +22,6 @@ spec/cassettes/*
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore Gemfile.lock
+Gemfile.lock
