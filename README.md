@@ -21,20 +21,10 @@ After this, everything should be running smoothly. Test it out by submitting a b
 
 ### Technical details
 
-Rails endpoints that interact with Slack slash commands and store data using PostgreSQL. Login on view pages
-handled by a Slack oauth setup leveraging [Figaro](https://github.com/laserlemon/figaro) and [Faraday](https://github.com/lostisland/faraday). Multi-tenancy provided by [Apartment](https://github.com/influitive/apartment).
+Rails endpoints that interact with Slack slash commands and store data using PostgreSQL.  [
 View pages use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework. The site is hosted on AWS EC2 with a HTTPS certificate provided by the extremely great [Let's Encrypt](https://letsencrypt.org/).
 
 (If you're here for Coffee-Maker-Bot, click [here](https://github.com/bermannoah/coffee-maker-bot).)
 
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/repo-images/blob/master/cb_basics.gif)
-
-### Logged out
-![view of the index page pre login](https://github.com/bermannoah/repo-images/blob/master/cb_logged_out.jpg)
-
-### Logged in
-![view of the index page logged in](https://github.com/bermannoah/repo-images/blob/master/cb_logged_in.jpg)
-
-### Logged in, viewing list of brews
-![view of the list of brews while logged in](https://github.com/bermannoah/repo-images/blob/master/cb_list_of_brews.jpg)
