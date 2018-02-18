@@ -13,6 +13,9 @@ before_script:
 jobs: 
   include: 
     
+    - stage: linter
+      script: bundle exec rubocop
+      
     - stage: security
       script: bundle exec brakeman -z
       
