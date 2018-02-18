@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.4.2'
-gem 'rails'
+gem 'rails', '~> 5.1.5'
 gem 'unicorn'
 gem 'pg', '~> 0.2'
 gem 'responders'
