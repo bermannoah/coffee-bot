@@ -1,5 +1,4 @@
 RSpec.configure do |config|
-
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
@@ -8,7 +7,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
   end
 
-  config.before(:each, :js => true) do
+  config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
 
@@ -22,5 +21,4 @@ RSpec.configure do |config|
 
   # Optional for formatting output of test suite runs (see comments)
   config.formatter = :documentation
-
 end

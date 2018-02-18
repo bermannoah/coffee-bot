@@ -36,6 +36,8 @@ group :development, :test do
   gem 'foreman'
   gem 'pry-rails'
   gem 'faker'
+  # Might as well use the day-job styles
+  gem 'wetransfer_style'
 end
 
 group :development do
@@ -54,5 +56,5 @@ group :test do
   gem 'brakeman',  require: false
   gem 'simplecov', require: false
   gem 'vcr'
-  gem "codeclimate-test-reporter", "~> 1.0.0"
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end
