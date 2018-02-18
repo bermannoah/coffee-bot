@@ -10,8 +10,7 @@ class Brew < ApplicationRecord
     end
   end
 
-  def self.create_new_brew(params)
-    team = find_team(params)
+  def self.brew_creator(team, params)
     text = params['text'].split(' ')
     location = text.shift || params['team_domain']
     brew = team.brews.create!(
@@ -19,19 +18,19 @@ class Brew < ApplicationRecord
       location: location,
       description: text.join(' ')
     )
+    brew
+  end
+
+  def self.create_new_brew(params)
+    team = find_team(params)
+    brew = brew_creator(team, params)
     send_webhook_alert(team.webhook_url, params) if team.webhook_url?
     brew.brewed_coffee_response(params)
   end
 
   def self.create_new_kettle_brew(params)
     team = find_team(params)
-    text = params['text'].split(' ')
-    location = text.shift || params['team_domain']
-    brew = team.brews.create!(
-      user_name: params['user_name'],
-      location: location,
-      description: text.join(' ')
-    )
+    brew = brew_creator(team, params)
     send_kettle_webhook_alert(team.webhook_url, params) if team.webhook_url?
     brew.brewed_kettle_response(params)
   end
