@@ -4,7 +4,6 @@ a coffee-pot slack-bot
 
 [![Dependency Status](https://gemnasium.com/badges/github.com/bermannoah/coffee-bot.svg)](https://gemnasium.com/github.com/bermannoah/coffee-bot)
 [![Build Status](https://travis-ci.org/bermannoah/coffee-bot.svg?branch=master)](https://travis-ci.org/bermannoah/coffee-bot)
-[![security](https://hakiri.io/github/bermannoah/coffee-bot/master.svg)](https://hakiri.io/github/bermannoah/coffee-bot/master)
 
 ## How to use coffeebot
 If you're not using coffeebot already you will need to to add the app to your Team. To do so you (or an admin) will also need to add two or three slash commands:
