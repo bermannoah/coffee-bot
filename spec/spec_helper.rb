@@ -1,9 +1,9 @@
 require 'simplecov'
 SimpleCov.start 'rails' do
-  add_filter "/app/channels/"
-  add_filter "/app/jobs/"
-  add_filter "/app/mailers/"
-  add_filter "/spec/"
+  add_filter '/app/channels/'
+  add_filter '/app/jobs/'
+  add_filter '/app/mailers/'
+  add_filter '/spec/'
 end
 
 RSpec.configure do |config|
@@ -16,5 +16,4 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
 end

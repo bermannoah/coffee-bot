@@ -6,8 +6,7 @@ class Api::V1::KettleController < Api::V1::BaseController
   end
 
   def show
-    limit = Brew.get_limit(params["text"])
+    limit = Brew.get_limit(params['text'])
     render json: Brew.get_last_brewed(limit, params)
   end
-    
 end
