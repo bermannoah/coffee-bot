@@ -4,7 +4,7 @@ class CreateSlackLoginUser < ActiveRecord::Migration[5.0]
       t.string :username
       t.string :slack_uid
       t.text :slack_access_token
-      
+
       t.timestamps null: false
     end
   end

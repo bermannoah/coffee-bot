@@ -8,10 +8,9 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     if current_user.nil?
-      render file: "/public/404", status: 404, layout: false
+      render file: '/public/404', status: 404, layout: false
     else
       current_user
     end
   end
-
 end
