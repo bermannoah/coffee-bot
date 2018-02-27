@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     namespace :v1 do
       post '/coffee_brewing', to: 'coffee#create'
       post '/kettle_brewing', to: 'coffee#create'
-      post '/make', to: 'make#create'
       get '/coffee_brewing', to: 'coffee#show'
     end
   end
