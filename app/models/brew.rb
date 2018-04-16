@@ -37,13 +37,13 @@ class Brew < ApplicationRecord
 
   def brewed_coffee_response(_params)
     {
-      "text": "Hey #{user_name} thanks for brewing coffee!",
+      "text": "Hey #{user_name} - thanks for brewing coffee!",
     }
   end
 
   def brewed_kettle_response(_params)
     {
-      "text": "Hey #{user_name} thanks for starting the kettle!",
+      "text": "Hey #{user_name} - thanks for starting the kettle!",
     }
   end
 

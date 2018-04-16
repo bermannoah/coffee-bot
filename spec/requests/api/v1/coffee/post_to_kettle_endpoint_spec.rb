@@ -22,7 +22,7 @@ describe 'kettle_brewing endpoint POST requests' do
       expect(response).to be_success
       expect(Brew.count).to eq(1)
       expect(Brew.first.location).to eq('Home')
-      expect(brew['text']).to eq("Hey #{user.username} thanks for starting the kettle!")
+      expect(brew['text']).to eq("Hey #{user.username} - thanks for starting the kettle!")
     end
 
     it 'creates a new brew with only a location' do
@@ -45,7 +45,7 @@ describe 'kettle_brewing endpoint POST requests' do
       expect(response).to be_success
       expect(Brew.count).to eq(1)
       expect(Brew.first.location).to eq('Home')
-      expect(brew['text']).to eq("Hey #{user.username} thanks for starting the kettle!")
+      expect(brew['text']).to eq("Hey #{user.username} - thanks for starting the kettle!")
     end
 
     it 'creates a new brew without a location' do
@@ -68,7 +68,7 @@ describe 'kettle_brewing endpoint POST requests' do
       expect(response).to be_success
       expect(Brew.count).to eq(1)
       expect(Brew.first.location).to eq(team.team_name)
-      expect(brew['text']).to eq("Hey #{user.username} thanks for starting the kettle!")
+      expect(brew['text']).to eq("Hey #{user.username} - thanks for starting the kettle!")
     end
 
     it 'does not create a new brew without a team' do
