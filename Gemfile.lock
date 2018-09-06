@@ -111,6 +111,9 @@ GEM
     parallel (1.12.1)
     parser (2.5.1.2)
       ast (~> 2.4.0)
+    passenger (5.3.4)
+      rack
+      rake (>= 0.8.1)
     pg (0.21.0)
     powerpack (0.1.2)
     pry (0.11.3)
@@ -223,6 +226,7 @@ DEPENDENCIES
   foreman
   launchy
   listen
+  passenger
   pg (~> 0.2)
   pry
   puma
