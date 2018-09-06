@@ -19,7 +19,7 @@ describe 'kettle_brewing endpoint POST requests' do
 
       brew = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(Brew.count).to eq(1)
       expect(Brew.first.location).to eq('Home')
       expect(brew['text']).to eq("Hey #{user.username} - thanks for starting the kettle!")
@@ -42,7 +42,7 @@ describe 'kettle_brewing endpoint POST requests' do
 
       brew = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(Brew.count).to eq(1)
       expect(Brew.first.location).to eq('Home')
       expect(brew['text']).to eq("Hey #{user.username} - thanks for starting the kettle!")
@@ -65,7 +65,7 @@ describe 'kettle_brewing endpoint POST requests' do
 
       brew = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(Brew.count).to eq(1)
       expect(Brew.first.location).to eq(team.team_name)
       expect(brew['text']).to eq("Hey #{user.username} - thanks for starting the kettle!")
