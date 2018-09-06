@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.4.2'
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2'
 gem 'pg', '~> 0.2'
 gem 'responders'
 gem 'figaro'
@@ -24,7 +24,6 @@ end
 
 group :development do
   gem 'listen'
-  gem 'rails_real_favicon'
 end
 
 group :test do

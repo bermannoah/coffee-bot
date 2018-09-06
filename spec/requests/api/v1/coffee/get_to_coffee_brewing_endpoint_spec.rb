@@ -21,7 +21,7 @@ describe 'coffee_brewing endpoint GET requests' do
 
       brew = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(brew['text']).to eq('Last coffee brew(s):')
       expect(brew['attachments'][0]['text']).to include('Coffee was brewed in Home less than a minute ago')
       expect(brew['attachments'][0]['text']).to include('delicious!')
@@ -46,7 +46,7 @@ describe 'coffee_brewing endpoint GET requests' do
 
       brew = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(brew['text']).to eq('Last coffee brew(s):')
       expect(brew['attachments'][0]['text']).to include(second_brew.description.to_s)
       expect(brew['attachments'][0]['text']).to include('Turing')
@@ -73,7 +73,7 @@ describe 'coffee_brewing endpoint GET requests' do
 
       brews = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(brews['text']).to eq('Last coffee brew(s):')
       expect(brews['attachments'][0]['text']).to include('Coffee was brewed in The Moon ')
       expect(brews['attachments'][0]['text']).to include('made me feel weightless!')
@@ -102,7 +102,7 @@ describe 'coffee_brewing endpoint GET requests' do
 
       brews = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(brews['text']).to eq('Last coffee brew(s):')
       expect(brews['attachments'][0]['text']).to include('#3')
       expect(brews['attachments'][0]['text']).to include('#4')
@@ -131,7 +131,7 @@ describe 'coffee_brewing endpoint GET requests' do
 
       brews = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(brews['text']).to eq('Last coffee brew(s):')
       expect(brews['attachments'][0]['text']).to include('Coffee was brewed in The Moon ')
       expect(brews['attachments'][0]['text']).to include('made me feel weightless!')
@@ -160,7 +160,7 @@ describe 'coffee_brewing endpoint GET requests' do
 
       brews = JSON.parse(response.body)
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(brews['text']).to eq('Last coffee brew(s):')
       expect(brews['attachments'][0]['text']).to include('Home')
       expect(brews['attachments'][0]['text']).to include('best!')
