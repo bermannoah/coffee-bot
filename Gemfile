@@ -13,6 +13,8 @@ gem 'bcrypt'
 gem 'apartment'
 # Boot reallllll quick like
 gem 'bootsnap', require: false
+# Broke it, maybe this fixes it
+gem 'passenger'
 
 group :development, :test do
   gem 'foreman'
