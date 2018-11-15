@@ -2,7 +2,6 @@
 
 a coffee-pot slack-bot 
 
-[![Dependency Status](https://gemnasium.com/badges/github.com/bermannoah/coffee-bot.svg)](https://gemnasium.com/github.com/bermannoah/coffee-bot)
 [![Build Status](https://travis-ci.org/bermannoah/coffee-bot.svg?branch=master)](https://travis-ci.org/bermannoah/coffee-bot)
 
 ## How to use coffeebot
