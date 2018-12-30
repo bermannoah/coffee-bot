@@ -15,7 +15,7 @@ Optional: `/kettle_brewing` - a POST request to https://coffeebot.coffee/api/v1/
 
 You can also set up tooltips for the commands. I'd recommend using some variation of the descriptions on [the main site](https://coffeebot.coffee). Plus, you can give the command response 'bot' a name!
 
-After this, everything should be running smoothly. Test it out by submitting a brew with `/coffee_brewing`.  Feel free to email me - noah at noahberman dot org - if you run into any trouble.
+After this, everything should be running smoothly. Test it out by submitting a brew with `/coffee_brewing`.  Feel free to email me - hello at coffeebot.coffee - if you run into any trouble.
 
 ### Technical details
 
