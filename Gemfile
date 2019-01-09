@@ -11,7 +11,6 @@ gem 'puma'
 gem 'bcrypt'
 # Adds multitenancy via gem
 gem 'apartment'
-# Boot reallllll quick like
 gem 'bootsnap', require: false
 
 group :development, :test do

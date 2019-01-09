@@ -8,15 +8,13 @@ class Team < ActiveRecord::Base
       create(team_name: user_info['team']['domain'], team_slack_id: user_info['team']['id'])
     else
       team
-           end
+    end
     team.id
   end
 
   def self.find_team_from_params(params)
     team = Team.find_by(team_name: params['team_domain'])
-    if team.nil?
-      team = Team.create!(team_name: params['team_domain'], team_slack_id: params['team_id'])
-    end
+    team = Team.create!(team_name: params['team_domain'], team_slack_id: params['team_id']) if team.nil?
     team
   end
 
