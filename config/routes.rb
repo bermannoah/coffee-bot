@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       post '/coffee_brewing', to: 'coffee#create'
       post '/kettle_brewing', to: 'coffee#create'
       get '/coffee_brewing', to: 'coffee#show'
+      get '/coffee_brewed', to: 'coffee#show' # alias for new slack requirements
     end
   end
 
