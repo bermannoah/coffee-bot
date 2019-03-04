@@ -12,6 +12,8 @@ gem 'bcrypt'
 # Adds multitenancy via gem
 gem 'apartment'
 gem 'bootsnap', require: false
+gem 'omniauth'
+gem 'omniauth-slack'
 
 group :development, :test do
   gem 'foreman'

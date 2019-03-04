@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'coffee_brewed endpoint GET requests' do
-  context 'GET /api/v1/coffee_brewed' do
+describe 'last_brewed endpoint post requests' do
+  context 'POST /api/v1/last_brewed' do
     it 'returns a brew with /last_brewed' do
       team = Fabricate(:team, team_slack_id: '1234')
       user = Fabricate(:slack_login_user, team_id: team.id)
@@ -17,7 +17,7 @@ describe 'coffee_brewed endpoint GET requests' do
       }
       expect(Brew.count).to eq(1)
 
-      get '/api/v1/coffee_brewed', params: data.stringify_keys, headers: { 'CONTENT_TYPE' => 'application/json'}
+      post '/api/v1/last_brewed', params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'}
 
       brew = JSON.parse(response.body)
 
@@ -42,7 +42,7 @@ describe 'coffee_brewed endpoint GET requests' do
       }
       expect(Brew.count).to eq(2)
 
-      get '/api/v1/coffee_brewed', params: data.stringify_keys, headers: { 'CONTENT_TYPE' => 'application/json'}
+      post '/api/v1/last_brewed', params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'}
 
       brew = JSON.parse(response.body)
 
@@ -69,7 +69,7 @@ describe 'coffee_brewed endpoint GET requests' do
       }
       expect(Brew.count).to eq(4)
 
-      get '/api/v1/coffee_brewed', params: data.stringify_keys, headers: { 'CONTENT_TYPE' => 'application/json'}
+      post '/api/v1/last_brewed', params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'}
 
       brews = JSON.parse(response.body)
 
@@ -98,7 +98,7 @@ describe 'coffee_brewed endpoint GET requests' do
       }
       expect(Brew.count).to eq(4)
 
-      get '/api/v1/coffee_brewed', params: data.stringify_keys, headers: { 'CONTENT_TYPE' => 'application/json'}
+      post '/api/v1/last_brewed', params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'}
 
       brews = JSON.parse(response.body)
 
@@ -127,7 +127,7 @@ describe 'coffee_brewed endpoint GET requests' do
       }
       expect(Brew.count).to eq(4)
 
-      get '/api/v1/coffee_brewed', params: data.stringify_keys, headers: { 'CONTENT_TYPE' => 'application/json'}
+      post '/api/v1/last_brewed', params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'}
 
       brews = JSON.parse(response.body)
 
@@ -156,7 +156,7 @@ describe 'coffee_brewed endpoint GET requests' do
       }
       expect(Brew.count).to eq(4)
 
-      get '/api/v1/coffee_brewed', params: data.stringify_keys, headers: { 'CONTENT_TYPE' => 'application/json'}
+      post '/api/v1/last_brewed', params: data.to_json, headers: { 'CONTENT_TYPE' => 'application/json'}
 
       brews = JSON.parse(response.body)
 
