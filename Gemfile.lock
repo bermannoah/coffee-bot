@@ -54,7 +54,7 @@ GEM
     bcrypt (3.1.12)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
-    brakeman (4.5.0)
+    brakeman (4.5.1)
     builder (3.2.3)
     capybara (3.19.1)
       addressable
