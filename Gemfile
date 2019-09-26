@@ -16,6 +16,8 @@ gem 'omniauth'
 gem 'omniauth-slack'
 # Mitigation for CVE-2015-9284.
 gem 'omniauth-rails_csrf_protection'
+# Error tracking
+gem 'appsignal'
 
 group :development, :test do
   gem 'foreman'
