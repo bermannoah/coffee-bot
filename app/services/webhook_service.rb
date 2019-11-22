@@ -4,15 +4,15 @@ require 'json'
 
 module WebhookService
 
-  def self.coffee_is_brewing(webhook_url, webhook_time, params)
-    send_brew_notification(webhook_url, webhook_time, params, 'coffee')
+  def self.coffee_is_brewing(webhook_url, webhook_time, webhook_text, params)
+    send_brew_notification(webhook_url, webhook_time, webhook_text, params, 'coffee')
   end
 
-  def self.kettle_is_brewing(webhook_url, params)
-    send_brew_notification(webhook_url, params, 'the kettle')
+  def self.kettle_is_brewing(webhook_url, webhook_time, webhook_text, params)
+    send_brew_notification(webhook_url, webhook_time, webhook_text, params, 'the kettle')
   end
 
-  def self.send_brew_notification(webhook_url, webhook_time, params, type)
+  def self.send_brew_notification(webhook_url, webhook_time, webhook_text, params, type)
     conn = Faraday.new(url: webhook_url)
     text = params['text'].split(' ')
     location = text.shift || params['team_domain']
@@ -33,7 +33,7 @@ module WebhookService
       req.body = body_text.to_json
     end
 
-    WebhookReminderJob.set(wait: webhook_time.minutes).perform_later(webhook_url, 'coffee')
+    WebhookReminderJob.set(wait: webhook_time.minutes).perform_later(webhook_url, 'coffee', text: webhook_text)
   end
 
 end

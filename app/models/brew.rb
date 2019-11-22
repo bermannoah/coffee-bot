@@ -101,6 +101,7 @@ class Brew < ApplicationRecord
   def self.send_webhook_alert(team, params)
     webhook_url = team.webhook_url
     webhook_time = team.webhook_time || 5.0 # Minutes
+    webhook_text = team.webhook_text || nil
     WebhookService.coffee_is_brewing(webhook_url, webhook_time, params)
   end
 

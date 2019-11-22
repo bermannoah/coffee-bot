@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_22_182002) do
+ActiveRecord::Schema.define(version: 2019_11_22_185555) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_11_22_182002) do
     t.datetime "updated_at", null: false
     t.string "webhook_url"
     t.decimal "webhook_time"
+    t.string "webhook_text"
   end
 
   add_foreign_key "brews", "teams"
