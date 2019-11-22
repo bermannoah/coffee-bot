@@ -24,7 +24,7 @@ class Brew < ApplicationRecord
   def self.create_new_brew(params)
     team = find_team(params)
     brew = brew_creator(team, params)
-    send_webhook_alert(team.webhook_url, params) if team.webhook_url?
+    send_webhook_alert(team, params) if team.webhook_url?
     brew.brewed_coffee_response(params)
   end
 
@@ -101,8 +101,10 @@ class Brew < ApplicationRecord
     end
   end
 
-  def self.send_webhook_alert(webhook_url, params)
-    WebhookService.coffee_is_brewing(webhook_url, params)
+  def self.send_webhook_alert(team, params)
+    webhook_url = team.webhook_url
+    webhook_time = team.webhook_time || 5.0 # Minutes
+    WebhookService.coffee_is_brewing(webhook_url, webhook_time, params)
   end
 
   def self.send_kettle_webhook_alert(webhook_url, params)

@@ -10,38 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618110841) do
+ActiveRecord::Schema.define(version: 2019_11_22_182002) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'brews', id: :serial, force: :cascade do |t|
-    t.string 'user_name'
-    t.string 'location'
-    t.string 'description'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'team_id'
-    t.index ['team_id'], name: 'index_brews_on_team_id'
+  create_table "brews", id: :serial, force: :cascade do |t|
+    t.string "user_name"
+    t.string "location"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_brews_on_team_id"
   end
 
-  create_table 'slack_login_users', id: :serial, force: :cascade do |t|
-    t.string 'username'
-    t.string 'slack_uid'
-    t.text 'slack_access_token'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'team_id'
-    t.index ['team_id'], name: 'index_slack_login_users_on_team_id'
+  create_table "slack_login_users", id: :serial, force: :cascade do |t|
+    t.string "username"
+    t.string "slack_uid"
+    t.text "slack_access_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_slack_login_users_on_team_id"
   end
 
-  create_table 'teams', id: :serial, force: :cascade do |t|
-    t.string 'team_name'
-    t.text 'team_slack_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'webhook_url'
+  create_table "teams", id: :serial, force: :cascade do |t|
+    t.string "team_name"
+    t.text "team_slack_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "webhook_url"
+    t.decimal "webhook_time"
   end
 
-  add_foreign_key 'brews', 'teams'
-  add_foreign_key 'slack_login_users', 'teams'
+  add_foreign_key "brews", "teams"
+  add_foreign_key "slack_login_users", "teams"
 end

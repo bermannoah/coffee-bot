@@ -4,15 +4,15 @@ require 'json'
 
 module WebhookService
 
-  def self.coffee_is_brewing(webhook_url, params)
-    send_brew_notification(webhook_url, params, 'coffee')
+  def self.coffee_is_brewing(webhook_url, webhook_time, params)
+    send_brew_notification(webhook_url, webhook_time, params, 'coffee')
   end
 
   def self.kettle_is_brewing(webhook_url, params)
     send_brew_notification(webhook_url, params, 'the kettle')
   end
 
-  def self.send_brew_notification(webhook_url, params, type)
+  def self.send_brew_notification(webhook_url, webhook_time, params, type)
     conn = Faraday.new(url: webhook_url)
     text = params['text'].split(' ')
     location = text.shift || params['team_domain']
@@ -33,9 +33,7 @@ module WebhookService
       req.body = body_text.to_json
     end
 
-    # This will eventually be configurable. For now though, it
-    # is set to match the creators brew time. There are perks, sometimes...
-    WebhookReminderJob.set(wait: 5.minutes).perform_later(webhook_url, 'coffee')
+    WebhookReminderJob.set(wait: webhook_time.minutes).perform_later(webhook_url, 'coffee')
   end
 
 end
