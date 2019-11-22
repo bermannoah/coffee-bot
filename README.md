@@ -1,6 +1,6 @@
-# coffeebot
+# coffeebot thinks github should immediately revoke its contract with ICE!
 
-a coffee-pot slack-bot 
+a coffee-pot slack-bot
 
 [![Build Status](https://travis-ci.org/bermannoah/coffee-bot.svg?branch=master)](https://travis-ci.org/bermannoah/coffee-bot)
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu/#/en_US)
@@ -21,7 +21,7 @@ After this, everything should be running smoothly. Test it out by submitting a b
 ### Technical details
 
 Rails endpoints that interact with Slack slash commands and store data using PostgreSQL.  [
-Views use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework. The site is hosted on AWS EC2 with a HTTPS certificate provided by [Let's Encrypt](https://letsencrypt.org/). Error tracking and system monitoring provided by [Appsignal](https://appsignal.com). 
+Views use the [Spectre](https://picturepan2.github.io/spectre/) CSS framework. The site is hosted on AWS EC2 with a HTTPS certificate provided by [Let's Encrypt](https://letsencrypt.org/). Error tracking and system monitoring provided by [Appsignal](https://appsignal.com).
 
 ### Basics of interacting with the bot
 ![gif of interaction](https://github.com/bermannoah/repo-images/blob/master/cb_basics.gif)
