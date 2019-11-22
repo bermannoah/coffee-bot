@@ -53,7 +53,8 @@ class Brew < ApplicationRecord
     }
   end
 
-  def self.get_last_brewed(limit, params)
+  def self.get_last_brewed(params)
+    limit = params['text'].to_i == 0 ? 1 : params['text'].to_i
     list = ''
     team = Team.find_by(team_slack_id: params['team_id'])
     team.brews.order(created_at: :desc).limit(limit).each do |brew|
@@ -69,10 +70,6 @@ class Brew < ApplicationRecord
         }
       ]
     }
-  end
-
-  def self.get_limit(input)
-    input.to_i != 0 ? input.to_i : 1
   end
 
   def self.find_team(params)
