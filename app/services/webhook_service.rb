@@ -5,11 +5,11 @@ require 'json'
 module WebhookService
 
   def self.coffee_is_brewing(webhook_url, webhook_time, webhook_text, send_reminder, params)
-    send_brew_notification(webhook_url, webhook_time, webhook_text, params, 'coffee')
+    send_brew_notification(webhook_url, webhook_time, webhook_text, send_reminder, params, 'coffee')
   end
 
   def self.kettle_is_brewing(webhook_url, webhook_time, webhook_text, send_reminder,  params)
-    send_brew_notification(webhook_url, webhook_time, webhook_text, params, 'the kettle')
+    send_brew_notification(webhook_url, webhook_time, webhook_text, send_reminder, params, 'the kettle')
   end
 
   def self.send_brew_notification(webhook_url, webhook_time, webhook_text, send_reminder, params, type)
