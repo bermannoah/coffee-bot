@@ -57,19 +57,24 @@ class Brew < ApplicationRecord
     limit = params['text'].to_i == 0 ? 1 : params['text'].to_i
     list = ''
     team = Team.find_by(team_slack_id: params['team_id'])
-    team.brews.order(created_at: :desc).limit(limit).each do |brew|
-      time = ApplicationController.helpers.time_ago_in_words(brew.created_at)
-      list << "Coffee was brewed in #{brew.location} #{time} ago.\n"
-      list << "#{brew.user_name} commented: #{brew.description}\n" if brew.description != ''
+    if team.nil?
+      Appsignal.increment_counter("request_with_no_team", 1)
+      return {text: "Sorry, please sign in with Slack to do this. https://coffeebot.coffee for instructions. :)"}
+    else
+      team.brews.order(created_at: :desc).limit(limit).each do |brew|
+        time = ApplicationController.helpers.time_ago_in_words(brew.created_at)
+        list << "Coffee was brewed in #{brew.location} #{time} ago.\n"
+        list << "#{brew.user_name} commented: #{brew.description}\n" if brew.description != ''
+      end
+      return {
+        "text": 'Last coffee brew(s):',
+        "attachments": [
+          {
+            "text": list
+          }
+        ]
+      }
     end
-    {
-      "text": 'Last coffee brew(s):',
-      "attachments": [
-        {
-          "text": list
-        }
-      ]
-    }
   end
 
   def self.find_team(params)
