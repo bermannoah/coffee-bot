@@ -36,4 +36,4 @@ development:
 production:
   <<: *defaults
   active: true
-  revision: "acac28a"
+  revision: "8a8f4cb"
