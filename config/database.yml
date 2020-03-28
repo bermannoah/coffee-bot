@@ -17,7 +17,7 @@ test:
 
 production:
   <<: *default
-  database: coffee-bot_production
+  database: coffeebot_production
   host: <%= ENV['APP_DATABASE_HOST'] %>
   username: coffeebot
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
