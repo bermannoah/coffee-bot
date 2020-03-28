@@ -21,3 +21,4 @@ production:
   host: <%= ENV['APP_DATABASE_HOST'] %>
   username: coffeebot
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  port: <%= ENV['APP_DATABASE_PORT'] %>
