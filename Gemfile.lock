@@ -76,7 +76,7 @@ GEM
     fabrication (2.21.0)
     faker (2.10.2)
       i18n (>= 1.6, < 2)
-    faraday (1.0.0)
+    faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.3)
     figaro (1.1.1)
