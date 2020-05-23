@@ -36,4 +36,4 @@ development:
 production:
   <<: *defaults
   active: true
-  revision: "4afd29e"
+  revision: "e5173b3"
