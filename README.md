@@ -13,7 +13,7 @@ If you're not using coffeebot already you will need to to add the app to your Te
 
 `/last_brewed` - a POST request to https://< coffeebot url >/api/v1/last_brewed
 
-After this, everything should be running smoothly. Test it out by submitting a brew with `/coffee_brewing`.  Feel free file a ticket on the repo - if you run into any trouble. I'm not archiving the project but for all practical purposes it is no longer being _actively_ maintained.
+After this, everything should be running smoothly. Test it out by submitting a brew with `/coffee_brewing`.  Feel free to file a ticket on the repo if you run into any trouble. I'm not archiving the project yet but for all practical purposes it is no longer being _actively_ maintained.
 
 ### Technical details
 
