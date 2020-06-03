@@ -37,13 +37,13 @@ class Brew < ApplicationRecord
 
   def brewed_coffee_response(_params)
     {
-      "text": "Hey #{user_name} - thanks for brewing coffee!",
+      "text": "Hey #{user_name} - thanks for brewing coffee! NOTE: This service will shut down on July 1 2020. Please email noah@noahberman.org with any questions. Thank you for all the brews, and be safe out there.",
     }
   end
 
   def brewed_kettle_response(_params)
     {
-      "text": "Hey #{user_name} - thanks for starting the kettle!",
+      "text": "Hey #{user_name} - thanks for starting the kettle! NOTE: This service will shut down on July 1 2020. Please email noah@noahberman.org with any questions. Thank you for all the brews, and be safe out there.",
     }
   end
 
@@ -63,7 +63,7 @@ class Brew < ApplicationRecord
     else
       team.brews.order(created_at: :desc).limit(limit).each do |brew|
         time = ApplicationController.helpers.time_ago_in_words(brew.created_at)
-        list << "Coffee was brewed in #{brew.location} #{time} ago.\n"
+        list << "Coffee was brewed in #{brew.location} #{time} ago. NOTE: This service will shut down on July 1 2020. Please email noah@noahberman.org with any questions. Thank you for all the brews, and be safe out there.\n"
         list << "#{brew.user_name} commented: #{brew.description}\n" if brew.description != ''
       end
       {
@@ -89,9 +89,9 @@ class Brew < ApplicationRecord
 
   def self.index_brew_display(current_user)
     if current_user && retrieve_recent_brew(current_user)
-      "Coffee was most recently brewed in #{@recent_brew.location} #{ApplicationController.helpers.time_ago_in_words(@recent_brew.created_at)} ago."
+      "Coffee was most recently brewed in #{@recent_brew.location} #{ApplicationController.helpers.time_ago_in_words(@recent_brew.created_at)} ago. NOTE: This service will shut down on July 1 2020. Please email noah@noahberman.org with any questions. Thank you for all the brews, and be safe out there."
     elsif current_user && !retrieve_recent_brew(current_user)
-      'No coffee has been brewed yet. Use the commands below to start logging brews!'
+      'No coffee has been brewed yet. Use the commands below to start logging brews! NOTE: This service will shut down on July 1 2020. Please email noah@noahberman.org with any questions. Thank you for all the brews, and be safe out there.'
     end
   end
 
