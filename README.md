@@ -1,9 +1,12 @@
 # coffeebot 
 
+# THIS PROJECT IS NOW ARCHIVED AND READ-ONLY. IF YOU WISH TO USE THE BOT PLEASE FORK AND APPLY NECESSARY UPDATES.
+
+# THANK YOU FOR BREWING <3
+
 a coffee-pot slack-bot
 
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu/#/en_US)
-![Monitored by Appsignal](https://img.shields.io/badge/monitored%20by-Appsignal-green?link=https://appsignal.com)
 
 ## How to use coffeebot
 If you're not using coffeebot already you will need to to add the app to your Team. To do so you (or an admin) will also need to use the Add to Slack button on the coffee bot homepage. It will add these commands:
